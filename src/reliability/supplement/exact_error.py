@@ -11,6 +11,8 @@ already produced by a4_analyses.py (nothing is retrained):
    floor = distance from the reference's own vertices to the sampled points;
  - field vs e (Eq. 5) and vs exact e: vertex-level Spearman, AUROC of the highest-error decile; the same for the
    shape-disagreement descriptor alone;
+ - calibration of the same predictions against the exact distance (slope, intercept, MAE, offset), since the
+   predictions were fitted on the Eq. 5 scale;
  - vertices outside the CT volume (mesh artefacts): count per foot, and the pooled and per-foot calibration
    (Eq. 45) with and without them;
  - thorax: tails of e (Eq. 5) for SR and trilinear and artefact counts (no exact distance: the thorax cache does
@@ -54,6 +56,7 @@ def tails(e):
         "p90_mm": float(np.percentile(e, 90)),
         "p99_mm": float(np.percentile(e, 99)),
         "max_mm": float(e.max()),
+        "fraction_above_2mm_pct": float(100.0 * (e > 2.0).mean()),
     }
 
 
@@ -164,6 +167,7 @@ def foot_analysis(cache_dir, results):
         d_sr = z["F"].astype(float)[:, DS]
         cal_all = E.calibration(p_sr, e_s, const_sr[ident])
         cal_keep = E.calibration(p_sr[keep], e_s[keep], const_sr[ident])
+        cal_exact = E.calibration(p_sr, e_x, const_sr[ident])  # predictions on the Eq. 5 scale vs the exact target
         per[ident] = {
             "n_vertices_sr": int(len(e_s)),
             "n_vertices_tri": int(len(e_st)),
@@ -190,6 +194,13 @@ def foot_analysis(cache_dir, results):
             "calibration_sr_eq5": {
                 "all_vertices": {k: cal_all[k] for k in ("slope", "intercept_mm", "mae_mm")},
                 "without_outside_volume": {k: cal_keep[k] for k in ("slope", "intercept_mm", "mae_mm")},
+            },
+            "calibration_sr_vs_exact": {
+                k: cal_exact[k] for k in ("slope", "intercept_mm", "mae_mm")
+            }
+            | {
+                "median_offset_eq5_minus_exact_mm": float(np.median(e_s - e_x)),
+                "mae_median_constant_mm": float(np.mean(np.abs(np.median(e_x) - e_x))),
             },
         }
         pooled["pred"].append(p_sr)
@@ -260,12 +271,12 @@ def summarize(per, surfaces=("sr", "trilinear"), measures=("eq5", "exact")):
         for meas in measures:
             if meas not in per[next(iter(per))][surf]:
                 continue
-            for stat in ("median_mm", "mean_mm", "p90_mm", "p99_mm"):
+            for stat in ("median_mm", "mean_mm", "p90_mm", "p99_mm", "fraction_above_2mm_pct"):
                 out[f"{surf}_{meas}_{stat}"] = E.summary([d[surf][meas][stat] for d in per.values()])
     for meas in measures:
         if meas not in per[next(iter(per))]["sr"]:
             continue
-        for stat in ("median_mm", "mean_mm", "p90_mm", "p99_mm"):
+        for stat in ("median_mm", "mean_mm", "p90_mm", "p99_mm", "fraction_above_2mm_pct"):
             a = {h: d["sr"][meas][stat] for h, d in per.items()}
             b = {h: d["trilinear"][meas][stat] for h, d in per.items()}
             out[f"sr_minus_trilinear_{meas}_{stat}"] = E.paired_comparison(a, b)
@@ -308,6 +319,10 @@ def main():
                 "n_vertices_outside_sr": int(sum(d["outside_volume"]["n_sr"] for d in per_foot.values())),
                 "n_vertices_outside_tri": int(sum(d["outside_volume"]["n_tri"] for d in per_foot.values())),
                 "max_e_outside_mm": max(d["outside_volume"]["max_e_outside_sr_mm"] for d in per_foot.values()),
+            },
+            "calibration_sr_vs_exact": {
+                k: E.summary([d["calibration_sr_vs_exact"][k] for d in per_foot.values()])
+                for k in ("slope", "intercept_mm", "mae_mm", "median_offset_eq5_minus_exact_mm", "mae_median_constant_mm")
             },
             "calibration_sr_eq5": {
                 sub: {
