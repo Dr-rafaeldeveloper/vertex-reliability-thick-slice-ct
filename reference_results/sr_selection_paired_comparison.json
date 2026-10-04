@@ -1,0 +1,399 @@
+{
+ "description": "20 HEBO evaluations vs the published configuration (1e-3, 2500), paired per case (n = 50, RPLHR-CT validation)",
+ "published_reference": {
+  "lr": 0.001,
+  "iters": 2500,
+  "objective_mm": 1.0764435445198899,
+  "tri_objective_mm": 1.18661703614252,
+  "sr_better_than_tri_in": 50
+ },
+ "evaluations": [
+  {
+   "evaluation": 1,
+   "phase": "sobol",
+   "lr": 0.0008916910056171513,
+   "iters": 3166,
+   "objective_mm": 1.0771857659513882,
+   "paired_diff_median_mm": -0.0006484945260852859,
+   "paired_diff_iqr_mm": [
+    -0.007662345572116536,
+    0.005365214053696665
+   ],
+   "better_than_published_in": 27,
+   "p_wilcoxon": 0.5398998476772991,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4898.5
+  },
+  {
+   "evaluation": 2,
+   "phase": "sobol",
+   "lr": 0.0014372315144367462,
+   "iters": 667,
+   "objective_mm": 1.134521746627092,
+   "paired_diff_median_mm": 0.04856165523563882,
+   "paired_diff_iqr_mm": [
+    0.033457881449305726,
+    0.06506877892834212
+   ],
+   "better_than_published_in": 0,
+   "p_wilcoxon": 1.7763568394002505e-15,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 2146.7
+  },
+  {
+   "evaluation": 3,
+   "phase": "sobol",
+   "lr": 0.007967824677057369,
+   "iters": 4381,
+   "objective_mm": 1.1817795304455228,
+   "paired_diff_median_mm": 0.08366896753498176,
+   "paired_diff_iqr_mm": [
+    0.06157318535093892,
+    0.11011440885794219
+   ],
+   "better_than_published_in": 0,
+   "p_wilcoxon": 1.7763568394002505e-15,
+   "sr_better_than_tri_in": 24,
+   "n_failures": 0,
+   "seconds": 6134.7
+  },
+  {
+   "evaluation": 4,
+   "phase": "gp_mace",
+   "lr": 0.0008977699420093034,
+   "iters": 2551,
+   "objective_mm": 1.0769175678623504,
+   "paired_diff_median_mm": -0.0006966649072499553,
+   "paired_diff_iqr_mm": [
+    -0.006212653317693634,
+    0.004237866397597934
+   ],
+   "better_than_published_in": 27,
+   "p_wilcoxon": 0.6321732707310517,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4088.4
+  },
+  {
+   "evaluation": 5,
+   "phase": "gp_mace",
+   "lr": 0.0007478425244538295,
+   "iters": 2957,
+   "objective_mm": 1.0731035849327688,
+   "paired_diff_median_mm": -0.0029545988009115898,
+   "paired_diff_iqr_mm": [
+    -0.009172905314147828,
+    0.00264595303660603
+   ],
+   "better_than_published_in": 36,
+   "p_wilcoxon": 0.09130577606126522,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4508.3
+  },
+  {
+   "evaluation": 6,
+   "phase": "gp_mace",
+   "lr": 0.00029031736070188297,
+   "iters": 3306,
+   "objective_mm": 1.0859830590364608,
+   "paired_diff_median_mm": 0.0066195832055876425,
+   "paired_diff_iqr_mm": [
+    0.00012767469536309473,
+    0.015099444262859807
+   ],
+   "better_than_published_in": 12,
+   "p_wilcoxon": 1.2965142769161275e-05,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4873.2
+  },
+  {
+   "evaluation": 7,
+   "phase": "gp_mace",
+   "lr": 0.0007114673611507841,
+   "iters": 2635,
+   "objective_mm": 1.083069956458841,
+   "paired_diff_median_mm": 0.0010751476220163259,
+   "paired_diff_iqr_mm": [
+    -0.0035052443070952566,
+    0.006303459456572735
+   ],
+   "better_than_published_in": 23,
+   "p_wilcoxon": 0.3230277659528582,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4156.9
+  },
+  {
+   "evaluation": 8,
+   "phase": "gp_mace",
+   "lr": 0.0007795862009745529,
+   "iters": 3204,
+   "objective_mm": 1.0799608952105135,
+   "paired_diff_median_mm": -0.003747153264741676,
+   "paired_diff_iqr_mm": [
+    -0.01023721162068153,
+    0.002115916172617305
+   ],
+   "better_than_published_in": 32,
+   "p_wilcoxon": 0.037166605079788084,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4786.9
+  },
+  {
+   "evaluation": 9,
+   "phase": "gp_mace",
+   "lr": 0.000809336719977086,
+   "iters": 2977,
+   "objective_mm": 1.0774961652595354,
+   "paired_diff_median_mm": -0.00010080493979680583,
+   "paired_diff_iqr_mm": [
+    -0.005476930192110735,
+    0.004072262373781943
+   ],
+   "better_than_published_in": 25,
+   "p_wilcoxon": 0.8035269768960163,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4532.1
+  },
+  {
+   "evaluation": 10,
+   "phase": "gp_mace",
+   "lr": 0.0029049766108469074,
+   "iters": 2689,
+   "objective_mm": 1.0897962326012567,
+   "paired_diff_median_mm": 0.019731301480447994,
+   "paired_diff_iqr_mm": [
+    0.006860535722305217,
+    0.031328836043237274
+   ],
+   "better_than_published_in": 4,
+   "p_wilcoxon": 2.994404724177002e-11,
+   "sr_better_than_tri_in": 47,
+   "n_failures": 0,
+   "seconds": 4212.7
+  },
+  {
+   "evaluation": 11,
+   "phase": "gp_mace",
+   "lr": 0.00010162237028994794,
+   "iters": 4131,
+   "objective_mm": 1.1199738665183516,
+   "paired_diff_median_mm": 0.03475441487176989,
+   "paired_diff_iqr_mm": [
+    0.02748087950057254,
+    0.042366426210400765
+   ],
+   "better_than_published_in": 0,
+   "p_wilcoxon": 1.7763568394002505e-15,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 5752.9
+  },
+  {
+   "evaluation": 12,
+   "phase": "gp_mace",
+   "lr": 0.0007138439936236778,
+   "iters": 2946,
+   "objective_mm": 1.0793443236312883,
+   "paired_diff_median_mm": -0.0037479079995332842,
+   "paired_diff_iqr_mm": [
+    -0.009121820609094944,
+    0.0020712930033490173
+   ],
+   "better_than_published_in": 34,
+   "p_wilcoxon": 0.01574343835962111,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4501.8
+  },
+  {
+   "evaluation": 13,
+   "phase": "gp_mace",
+   "lr": 0.000378218409293461,
+   "iters": 2293,
+   "objective_mm": 1.0939969359625716,
+   "paired_diff_median_mm": 0.01226605141353243,
+   "paired_diff_iqr_mm": [
+    0.0055837501060472805,
+    0.02049052158182757
+   ],
+   "better_than_published_in": 5,
+   "p_wilcoxon": 1.0192735544478637e-11,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 3791.9
+  },
+  {
+   "evaluation": 14,
+   "phase": "gp_mace",
+   "lr": 0.0008801846155114745,
+   "iters": 3140,
+   "objective_mm": 1.0775316309973666,
+   "paired_diff_median_mm": -0.004354056940362783,
+   "paired_diff_iqr_mm": [
+    -0.007775121131595453,
+    0.0025073887236765624
+   ],
+   "better_than_published_in": 32,
+   "p_wilcoxon": 0.03048635454688231,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4718.0
+  },
+  {
+   "evaluation": 15,
+   "phase": "gp_mace",
+   "lr": 0.00010003137472188619,
+   "iters": 2104,
+   "objective_mm": 1.1336030873938245,
+   "paired_diff_median_mm": 0.04470526121971552,
+   "paired_diff_iqr_mm": [
+    0.03892343868093989,
+    0.05642939056231669
+   ],
+   "better_than_published_in": 0,
+   "p_wilcoxon": 1.7763568394002505e-15,
+   "sr_better_than_tri_in": 48,
+   "n_failures": 0,
+   "seconds": 3596.3
+  },
+  {
+   "evaluation": 16,
+   "phase": "gp_mace",
+   "lr": 0.0009425471751360493,
+   "iters": 2960,
+   "objective_mm": 1.0795082565645229,
+   "paired_diff_median_mm": -0.0010820350764578768,
+   "paired_diff_iqr_mm": [
+    -0.006531592140474829,
+    0.00631878798559149
+   ],
+   "better_than_published_in": 28,
+   "p_wilcoxon": 0.5462652589115535,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4519.8
+  },
+  {
+   "evaluation": 17,
+   "phase": "gp_mace",
+   "lr": 0.0017076292034951584,
+   "iters": 2351,
+   "objective_mm": 1.1047501517709897,
+   "paired_diff_median_mm": 0.0014569555395648193,
+   "paired_diff_iqr_mm": [
+    -0.005141948946139507,
+    0.009293261759494131
+   ],
+   "better_than_published_in": 20,
+   "p_wilcoxon": 0.08054833435456032,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 3864.8
+  },
+  {
+   "evaluation": 18,
+   "phase": "gp_mace",
+   "lr": 0.0007177598043054638,
+   "iters": 3005,
+   "objective_mm": 1.0748218034595363,
+   "paired_diff_median_mm": -0.0013066705571788129,
+   "paired_diff_iqr_mm": [
+    -0.005032940286271798,
+    0.004373272226685404
+   ],
+   "better_than_published_in": 31,
+   "p_wilcoxon": 0.4547879869752496,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4570.0
+  },
+  {
+   "evaluation": 19,
+   "phase": "gp_mace",
+   "lr": 0.0005850631055477961,
+   "iters": 3046,
+   "objective_mm": 1.068644537112092,
+   "paired_diff_median_mm": -0.0008956996149749319,
+   "paired_diff_iqr_mm": [
+    -0.006456934184554286,
+    0.004065508972272369
+   ],
+   "better_than_published_in": 29,
+   "p_wilcoxon": 0.32777522027848605,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4602.4
+  },
+  {
+   "evaluation": 20,
+   "phase": "gp_mace",
+   "lr": 0.00048211019774063615,
+   "iters": 3040,
+   "objective_mm": 1.0821876528512089,
+   "paired_diff_median_mm": 0.000663315985414914,
+   "paired_diff_iqr_mm": [
+    -0.005268908569283415,
+    0.005017854139650946
+   ],
+   "better_than_published_in": 24,
+   "p_wilcoxon": 0.8557483168795788,
+   "sr_better_than_tri_in": 50,
+   "n_failures": 0,
+   "seconds": 4595.3
+  }
+ ],
+ "adopted_by_rule": {
+  "lr": 0.0005850631055477961,
+  "iters": 3046,
+  "objective_mm": 1.068644537112092
+ },
+ "adopted_and_published": false,
+ "adoption_rule": "the configuration with the lowest objective among the 20 evaluated AND the published one is adopted, with the same tie-break",
+ "external_interruptions": [
+  {
+   "index": 3,
+   "phase": "gp_mace",
+   "lr": 0.0008977699420093034,
+   "iters": 2551,
+   "objective_mm": 1.18661703614252,
+   "failure": "CalledProcessError: Command '['<local path>', 'src/reliability/sr_selection/evaluate_sr.py', '--lr', '0.0008977699420093034', '--iters', '2551', '--output', '<local path>",
+   "file": null,
+   "sobol_generated": 3,
+   "reason": "Windows restart (planned update) on 2026-09-23 01:02; Event Log System id 1074, TrustedInstaller, 'Operating System: Upgrade (Planned)'",
+   "decision": "observation removed from HEBO: FAILURE_RULE covers a failure of the configuration (diverging SR/invalid mesh), not a process killed by the system; evaluation 3 is redone on resume (same suggestion, seed 3)",
+   "state_copy": "hebo_state.before_restart_2026-09-23.json"
+  }
+ ],
+ "code_hash_reliability": "f8cefd11ca1bcf49",
+ "sr_selection_hash": "94e6e160f2fa8c2e",
+ "environment": {
+  "data": "2026-09-27T08:33:11",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "3550eadf934c63ff",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "e52e11eedd9687a0ae2731e7ab84f19a72f3a6cba51403bc0e509bd5e507534b",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

@@ -1,0 +1,13 @@
+# Versions used to produce the reference results (Python 3.13, Windows 11, CUDA 12.6, NVIDIA GTX 1660 Ti).
+# Install PyTorch for your CUDA version first: https://pytorch.org/get-started/locally/
+torch==2.12.1
+numpy==2.4.2
+scipy==1.17.1
+scikit-learn==1.9.0
+scikit-image==0.26.0
+SimpleITK==2.5.3
+trimesh==4.12.2
+fast-simplification==0.1.13
+optuna==5.0.0
+matplotlib==3.11.0
+pytest==9.1.1

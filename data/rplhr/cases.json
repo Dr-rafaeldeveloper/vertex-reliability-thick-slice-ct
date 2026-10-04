@@ -1,0 +1,602 @@
+[
+ {
+  "case": "CT00000100",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000101",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000102",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000103",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000104",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000105",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000106",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000107",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000108",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000109",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000110",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000111",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000112",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000113",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000114",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000115",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000116",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000117",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000118",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000119",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000120",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000121",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000122",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000123",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000124",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000125",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000126",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000127",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000128",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000129",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000130",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000131",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000132",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000133",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000134",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000135",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000136",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000137",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000138",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000139",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000140",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000141",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000142",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000143",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000144",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000145",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000146",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000147",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000148",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000149",
+  "partition": "val"
+ },
+ {
+  "case": "CT00000150",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000151",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000152",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000153",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000154",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000155",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000156",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000157",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000158",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000159",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000160",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000161",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000162",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000163",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000164",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000165",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000166",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000167",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000168",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000169",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000170",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000171",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000172",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000173",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000174",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000175",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000176",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000177",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000178",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000179",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000180",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000181",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000182",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000183",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000184",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000185",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000186",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000187",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000188",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000189",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000190",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000191",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000192",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000193",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000194",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000195",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000196",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000197",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000198",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000199",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000200",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000201",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000202",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000203",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000204",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000205",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000206",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000207",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000208",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000209",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000210",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000211",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000212",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000213",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000214",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000215",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000216",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000217",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000218",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000219",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000220",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000221",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000222",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000223",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000224",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000225",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000226",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000227",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000228",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000229",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000230",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000231",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000232",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000233",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000234",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000235",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000236",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000237",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000238",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000239",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000240",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000241",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000242",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000243",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000244",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000245",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000246",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000247",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000248",
+  "partition": "test"
+ },
+ {
+  "case": "CT00000249",
+  "partition": "test"
+ }
+]
