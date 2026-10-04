@@ -17,4 +17,5 @@ python $P/a4_analyses.py --only 31,32,33,341,342,35,37         > "$L/analyses_fo
 python $P/a4_analyses.py --only 36                             > "$L/analyses_thorax.log" 2>&1  # thoracic results (Section 3.6)
 python $P/supplement/sensitivity/a4c_sensitivity.py --process  > "$L/sens_process.log" 2>&1
 python $P/supplement/sensitivity/a4c_sensitivity.py --analyze  > "$L/sens_analyze.log" 2>&1
+python $P/supplement/exact_error.py                            > "$L/exact_error.log" 2>&1
 python scripts/compare_with_reference.py

@@ -55,6 +55,7 @@ src/reliability/            the package
   a4_analyses.py            one result file per Results subsection
   sr_selection/             selection of the super-resolution learning rate and iterations
   supplement/sensitivity/   sensitivity analysis
+  supplement/exact_error.py check of the error measurement (sampling floor, exact distance, tails)
   figures/                  figure scripts
   tests/                    unit tests
 scripts/                    data preparation, quick check, full run, comparison with the reference results
@@ -77,7 +78,7 @@ No download is required for these two steps.
 
 ```bash
 python scripts/setup_reference.py
-python -m pytest src/reliability/tests -q      # 53 unit tests
+python -m pytest src/reliability/tests -q      # unit tests and known-truth tests of the error measurement
 python scripts/quick_check.py                  # one foot, about 2 minutes on the GPU above
 ```
 
@@ -110,6 +111,7 @@ The script runs, in order:
 | Thoracic cohort | `a4_run_thorax.py --partition test` | the same without uncertainty, for the 100 test cases |
 | Results | `a4_analyses.py` | one JSON per Results subsection, including the nested random-forest selection |
 | Sensitivity | `a4c_sensitivity.py --process`, then `--analyze` | sensitivity to modelling choices |
+| Error measurement check | `supplement/exact_error.py` | sampling floor of Eq. 5, exact point-to-triangle error, error tails, vertices outside the volume |
 | Comparison | `scripts/compare_with_reference.py` | every numeric value against `reference_results/` |
 
 Each step skips the cases already processed, so the run can be interrupted and resumed. Outputs go to
@@ -157,6 +159,17 @@ Medians across cases with the interquartile range, from `reference_results/`:
 
 Registration experiment (foot): remote-target displacement of 0.323 mm when the region is selected by the predicted
 field, against 0.527 mm for random selection.
+
+## Note on the error measurement
+
+Eq. 5 of the paper measures the surface error of a vertex as the distance to the nearest of 120,000 points
+sampled on the reference surface. The points are about 0.8 mm apart on a foot, so a vertex lying on the
+reference surface still measures about 0.4 mm. `src/reliability/supplement/exact_error.py` quantifies this floor,
+repeats the association metrics against the exact point-to-triangle distance using the saved leave-one-case-out
+predictions, reports the mean and upper percentiles of the error for both reconstructions, and counts the vertices of
+each mesh that lie outside the CT volume. Its output for the reference run is `reference_results/rS_exact_error.json`.
+`tests/test_known_truth.py` checks both measurements on synthetic surfaces with a known offset; the sampled
+measurement is expected to fail the identity and small-offset cases and is marked as such.
 
 ## Reproducibility notes
 

@@ -1,0 +1,65 @@
+{
+ "mae_model": {
+  "median": 0.348087138885127,
+  "iqr": [
+   0.30661202341835303,
+   0.4036247489243989
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "mae_constant_mean": {
+  "median": 0.40420013004391697,
+  "iqr": [
+   0.3755883321079517,
+   0.48377269083024144
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "mae_constant_median": {
+  "median": 0.34335416246768546,
+  "iqr": [
+   0.2986006324253538,
+   0.43230125647495454
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "model_minus_constant_mean": {
+  "n": 48,
+  "n_excluded_nan": 0,
+  "difference": {
+   "median": -0.060941558989860006,
+   "iqr": [
+    -0.10186012277154145,
+    -0.04273747801492157
+   ],
+   "n": 48,
+   "positives": 0,
+   "positive_proportion": 0.0
+  },
+  "p_wilcoxon": 7.105427357601002e-15,
+  "degenerate": false
+ },
+ "model_minus_constant_median": {
+  "n": 48,
+  "n_excluded_nan": 0,
+  "difference": {
+   "median": -0.004564567568463712,
+   "iqr": [
+    -0.04772751074287894,
+    0.011653893533441734
+   ],
+   "n": 48,
+   "positives": 20,
+   "positive_proportion": 0.4166666666666667
+  },
+  "p_wilcoxon": 0.05262724987953504,
+  "degenerate": false
+ },
+ "environment": {}
+}
