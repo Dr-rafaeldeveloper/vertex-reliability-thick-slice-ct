@@ -125,12 +125,12 @@ def variant(v, ident, hu_t, thick, grid, spacing, thick_spacing, roi, thick_roi,
         mesh_tri = S.mask_to_mesh(
             S.segment_bone(tri, roi, spacing), grid, **mesh_kw
         )
-        e_tri = S.vertex_error(np.asarray(mesh_tri.vertices, float), pts_ref)
+        e_tri = S.vertex_error_target(np.asarray(mesh_tri.vertices, float), mesh_ref, pts_ref)
         mesh_sr = S.mask_to_mesh(
             S.segment_bone(rec, roi, spacing), grid, **mesh_kw
         )
         V = np.asarray(mesh_sr.vertices, float)
-        e = S.vertex_error(V, pts_ref)
+        e = S.vertex_error_target(V, mesh_ref, pts_ref)
         F = X.features(mesh_sr, grid, k, s_interp)
     return {
         "e": e.astype(np.float32),
@@ -187,6 +187,10 @@ def run_processing(filepath, dev, folder=FOLDER):
         r = variant(
             v, ident, hu_t, thick, grid, spacing, thick_spacing, roi, thick_roi, rec, tri, k
         )
+        if C.REMOVE_VERTICES_OUTSIDE_VOLUME:  # same rule as save_cache (e_tri has no vertices here: kept)
+            keep = ~S.outside_volume(r["V"], grid.as_dict())
+            for kk in ("e", "F", "V"):
+                r[kk] = np.asarray(r[kk])[keep]
         for kk in ("e", "F", "V", "e_tri"):
             arrays["%s__%s" % (name, kk)] = r[kk]
         meta["faces"][name] = r["faces"]

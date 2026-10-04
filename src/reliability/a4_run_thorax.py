@@ -96,7 +96,7 @@ def process_case(thin, thk, ident, dev, iters=C.SR_ITERS, verbose=False):
         S.segment_bone(tri, roi, spacing_f, stats=st_tri), grid
     )
     V_tri = np.asarray(mesh_tri.vertices, float)
-    e_tri = S.vertex_error(V_tri, pts_ref)
+    e_tri = S.vertex_error_target(V_tri, mesh_ref, pts_ref)
     F_tri = X.features(mesh_tri, grid, k, s_interp)
     times["trilinear"] = time.time() - t0
     tn, lo, esc = SR.normalize(thick)
@@ -110,7 +110,7 @@ def process_case(thin, thk, ident, dev, iters=C.SR_ITERS, verbose=False):
         S.segment_bone(rec, roi, spacing_f, stats=st_sr), grid
     )
     V = np.asarray(mesh_sr.vertices, float)
-    e = S.vertex_error(V, pts_ref)
+    e = S.vertex_error_target(V, mesh_ref, pts_ref)
     border_sr = S.open_border(mesh_sr)  
     F = X.features(mesh_sr, grid, k, s_interp)
     times["sr"] = time.time() - t0

@@ -167,6 +167,17 @@ ROI_DILATE_MM = 3.0  # isotropic in mm (before: 6 voxels of the thin grid = 3 mm
 
 # --------------------------------------------------------------------------- §2.6 error per vertex
 N_REFERENCE_POINTS = 120000  # §2.6 "120,000 points were uniformly sampled"
+# Target definition. "sampled": Eq. 5 of the reference run (distance to the nearest sampled point; carries a
+# sampling floor of about 0.36 mm, see supplement/exact_error.py). "exact": distance from the vertex to the reference
+# surface itself (point to triangle), bounded by the sampled distance; vertices farther than EXACT_MAX_MM from the
+# sampled points keep the sampled value (mesh artefacts).
+ERROR_DEFINITION = "exact"
+EXACT_MAX_MM = 20.0
+EXACT_LARGE_TRIANGLE_MM = 5.0
+# Vertices outside the CT volume (detached fragments of the mesh) are removed from every per-vertex array of the case
+# before it is saved (margin in mm around the grid box).
+REMOVE_VERTICES_OUTSIDE_VOLUME = True
+OUTSIDE_VOLUME_MARGIN_MM = 1.0
 # sampling seed derived from the case identifier (text silent)
 
 # --------------------------------------------------------------------------- §2.7 features and forest

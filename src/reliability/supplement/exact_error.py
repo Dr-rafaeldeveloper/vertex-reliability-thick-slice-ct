@@ -36,7 +36,6 @@ import os
 import sys
 
 import numpy as np
-import trimesh
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))
@@ -71,40 +70,8 @@ def exact_bounded(V, e_eq5, ref):
     of the exact distance): small triangles are found with a KD-tree on their centroids within e_eq5 + LARGE_TRI_MM,
     the few large triangles left by decimation are tested against every vertex. nearest_exact uses a single radius
     for all triangles and becomes very slow when the reference has one long triangle."""
-    from scipy.spatial import cKDTree
 
-    e = e_eq5.copy()
-    near = np.flatnonzero(e_eq5 <= EXACT_MAX_MM)
-    if len(near) == 0:
-        return e
-    m = P.without_degenerate(ref)
-    tri = np.asarray(m.triangles, float)
-    cent = tri.mean(axis=1)
-    rad = np.sqrt(((tri - cent[:, None, :]) ** 2).sum(-1)).max(axis=1)
-    small, large = np.flatnonzero(rad <= LARGE_TRI_MM), np.flatnonzero(rad > LARGE_TRI_MM)
-    Pn = V[near]
-    best = np.full(len(near), np.inf)
-    if len(large):
-        for i0 in range(0, len(near), 4000):
-            blk = Pn[i0 : i0 + 4000]
-            for t in large:
-                qq = trimesh.triangles.closest_point(np.repeat(tri[t][None], len(blk), axis=0), blk)
-                best[i0 : i0 + 4000] = np.minimum(best[i0 : i0 + 4000], np.sqrt(((qq - blk) ** 2).sum(-1)))
-    tree = cKDTree(cent[small])
-    ub = e_eq5[near] + 1e-9
-    for i0 in range(0, len(near), 2000):
-        i1 = min(len(near), i0 + 2000)
-        cand = tree.query_ball_point(Pn[i0:i1], ub[i0:i1] + LARGE_TRI_MM)
-        for j, cj in enumerate(cand):
-            if not cj:
-                continue
-            cj = small[np.asarray(cj, int)]
-            p = Pn[i0 + j]
-            qq = trimesh.triangles.closest_point(tri[cj], np.repeat(p[None, :], len(cj), axis=0))
-            best[i0 + j] = min(best[i0 + j], float(np.sqrt(((qq - p) ** 2).sum(-1)).min()))
-    assert np.all(np.isfinite(best)) and np.all(best <= ub + 1e-3), "bounded search missed the nearest triangle: %.3g" % float((best - ub).max())
-    e[near] = best
-    return e
+    return P.nearest_exact_bounded(V, e_eq5, ref, EXACT_MAX_MM, LARGE_TRI_MM)
 
 
 def grid_box(meta):

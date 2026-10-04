@@ -123,7 +123,7 @@ def process_foot(
         S.segment_bone(tri, roi, spacing, stats=st_tri), grid
     )
     V_tri = np.asarray(mesh_tri.vertices, float)
-    e_tri = S.vertex_error(V_tri, pts_ref)
+    e_tri = S.vertex_error_target(V_tri, mesh_ref, pts_ref)
     F_tri = X.features(mesh_tri, grid, k, s_interp)
     times["trilinear"] = time.time() - t0
     # 6. evaluated SR
@@ -168,7 +168,7 @@ def process_foot(
     )
     V = np.asarray(mesh_sr.vertices, float)
     N = np.asarray(mesh_sr.vertex_normals, float)
-    e = S.vertex_error(V, pts_ref)  # Eq. 5
+    e = S.vertex_error_target(V, mesh_ref, pts_ref)  # Eq. 5, or exact (C.ERROR_DEFINITION)
     border_sr = S.open_border(mesh_sr)  # evidence of the open border
     F = X.features(mesh_sr, grid, k, s_interp)  # Eq. 7–14
     q = S.reference_correspondence(V, mesh_ref)  # §2.11 exact matches
@@ -306,6 +306,8 @@ def _outliers_dshape(dshape, V, grid, shape_zyx, threshold_mm=3.0, border_mm=2.0
 def save_cache(out, folder):
     os.makedirs(folder, exist_ok=True)
     p = os.path.join(folder, out["ident"] + ".npz")
+    if "grid" in out and "V" in out:
+        out = S.remove_outside_volume(out)
     arrays = {kk: v for kk, v in out.items() if isinstance(v, np.ndarray)}
     meta = {kk: v for kk, v in out.items() if not isinstance(v, np.ndarray)}
     meta["environment"] = C.environment_record()

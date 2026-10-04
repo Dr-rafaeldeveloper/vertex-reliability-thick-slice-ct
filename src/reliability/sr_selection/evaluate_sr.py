@@ -149,7 +149,7 @@ process_case)."""
     rec = SR.denormalize(SR.apply(network, tn, k), lo, esc)
     del network
     mesh = S.mask_to_mesh(S.segment_bone(rec, roi, spacing_f), grid)
-    e = S.vertex_error(np.asarray(mesh.vertices, float), pts_ref)
+    e = S.vertex_error(np.asarray(mesh.vertices, float), pts_ref)  # Eq. 5: the SR selection of the reference run used the sampled target
     return {
         "e_median": float(np.median(e)),
         "e_mean": float(np.mean(e)),

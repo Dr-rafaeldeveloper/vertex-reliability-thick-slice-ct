@@ -209,6 +209,56 @@ def vertex_error(V: np.ndarray, ref_points: np.ndarray) -> np.ndarray:
     return cKDTree(ref_points).query(V)[0]
 
 
+def vertex_error_target(V: np.ndarray, mesh_ref: trimesh.Trimesh, ref_points: np.ndarray) -> np.ndarray:
+    """Target error of the configuration (C.ERROR_DEFINITION): Eq. 5 against the sampled points ("sampled"), or the
+    exact point-to-triangle distance to the reference surface bounded by it ("exact")."""
+    e = vertex_error(V, ref_points)
+    if C.ERROR_DEFINITION == "sampled":
+        return e
+    if C.ERROR_DEFINITION == "exact":
+        from reliability.a4_proximity import nearest_exact_bounded
+
+        return nearest_exact_bounded(V, e, mesh_ref, C.EXACT_MAX_MM, C.EXACT_LARGE_TRIANGLE_MM)
+    raise ValueError("unknown ERROR_DEFINITION: %r" % (C.ERROR_DEFINITION,))
+
+
+def outside_volume(V: np.ndarray, grid_dict: dict, margin_mm: float = C.OUTSIDE_VOLUME_MARGIN_MM) -> np.ndarray:
+    """True for vertices outside the box of the CT grid (as_dict of Grid), with a margin in mm."""
+    sp = np.asarray(grid_dict["spacing_mm"], float)
+    org = np.asarray(grid_dict["origin_mm"], float)
+    shape_zyx = np.asarray(grid_dict["shape_zyx"], float)
+    lo, hi = org, org + sp * (shape_zyx[::-1] - 1)
+    V = np.asarray(V, float)
+    return ((V < lo - margin_mm) | (V > hi + margin_mm)).any(axis=1)
+
+
+def remove_outside_volume(out: dict, keys_sr=("V",), keys_tri=("V_tri",)) -> dict:
+    """Removes from `out` (arrays of one case, with out["grid"]) the vertices outside the CT volume: every array
+    whose first dimension (or second, for stacked members) matches the number of SR vertices follows the SR mask;
+    the arrays named in keys_tri and their companions (*_tri) follow the trilinear mask. Records the counts."""
+    if not C.REMOVE_VERTICES_OUTSIDE_VOLUME:
+        return out
+    keep = ~outside_volume(out["V"], out["grid"])
+    keep_t = ~outside_volume(out["V_tri"], out["grid"]) if "V_tri" in out else None
+    n, nt = len(out["V"]), (len(out["V_tri"]) if keep_t is not None else -1)
+    for k, a in list(out.items()):
+        if not isinstance(a, np.ndarray) or a.ndim == 0:
+            continue
+        if k.endswith("_tri") or k in keys_tri:
+            if keep_t is not None and a.shape[0] == nt:
+                out[k] = a[keep_t]
+        elif a.shape[0] == n:
+            out[k] = a[keep]
+        elif a.ndim == 2 and a.shape[1] == n:
+            out[k] = a[:, keep]
+    out["removed_outside_volume"] = {
+        "sr": int((~keep).sum()),
+        "tri": int((~keep_t).sum()) if keep_t is not None else 0,
+        "margin_mm": C.OUTSIDE_VOLUME_MARGIN_MM,
+    }
+    return out
+
+
 def reference_correspondence(V: np.ndarray, mesh_ref: trimesh.Trimesh) -> np.ndarray:
     """§2.11: correspondences "treated as noiseless" -> EXACT closest point on the reference
  surface (point-to-triangle), used as q(v) in the registration. declared (the text does not define
