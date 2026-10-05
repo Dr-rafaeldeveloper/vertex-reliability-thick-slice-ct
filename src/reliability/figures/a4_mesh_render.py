@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 
 import matplotlib
 import numpy as np
@@ -22,7 +23,10 @@ from matplotlib.colors import Normalize, to_rgb
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
-CACHE_FOOT = os.path.join(ROOT, "output", "validation", "reliability", "foot_cache")
+sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))
+from reliability import a4_config as C  # noqa: E402
+
+CACHE_FOOT = C.A4_CACHE_FOOT  # honours A4_OUTPUT_DIR like the rest of the package
 MESHES = os.path.join(
     ROOT, "output", "figures",
     "figs",

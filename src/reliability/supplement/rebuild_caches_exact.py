@@ -18,6 +18,7 @@ Output: the cache folders of the current configuration (set A4_OUTPUT_DIR to a n
 from __future__ import annotations
 
 import argparse
+import gc
 import glob
 import json
 import os
@@ -94,13 +95,14 @@ def main():
     ap.add_argument("--old-foot", required=True)
     ap.add_argument("--old-thorax", required=True)
     ap.add_argument("--only", default="foot,thorax")
+    ap.add_argument("--case", default="", help="rebuild only this case identifier (one process per case keeps the memory low)")
     args = ap.parse_args()
     only = set(args.only.split(","))
     if "foot" in only:
         for i, path in enumerate(sorted(glob.glob(os.path.join(args.old_foot, "*.npz")))):
             ident = os.path.basename(path)[:-4]
             dst = os.path.join(C.A4_CACHE_FOOT, ident + ".npz")
-            if os.path.exists(dst):
+            if os.path.exists(dst) or (args.case and ident != args.case):
                 continue
             t0 = time.time()
             hu_t, _thick, grid, spacing, _ts, roi, _tr = prepare_foot(os.path.join(C.FOOT_FOLDER, ident), C.K_FOOT)
@@ -114,16 +116,20 @@ def main():
         for path in sorted(glob.glob(os.path.join(args.old_thorax, "*.npz"))):
             ident = os.path.basename(path)[:-4]
             dst = os.path.join(C.A4_CACHE_THORAX, ident + ".npz")
-            if os.path.exists(dst):
+            if os.path.exists(dst) or (args.case and ident != args.case):
                 continue
             t0 = time.time()
             thin, thk = pairs[ident]
             hu_ref, _thick, grid, spacing_f, _ts, roi, _tr, _k, _info = prepare_thorax(thin, thk)
             mesh_ref = S.mask_to_mesh(S.segment_bone(hu_ref, roi, spacing_f), grid)
+            del hu_ref, _thick, roi, _tr  # the volumes are not needed for the distances; free them before the search
+            gc.collect()
             r = rebuild(path, mesh_ref, C.A4_CACHE_THORAX)
             print("thorax %s | eq5 %.3f -> exact %.3f | removed %d/%d | %.0f s" % (
                 ident, r["median_eq5_mm"], r["median_exact_mm"], r["n_removed_outside_volume_sr"],
                 r["n_removed_outside_volume_tri"], time.time() - t0), flush=True)
+    if args.case:
+        return
     with open(os.path.join(C.A4_OUT, "rebuild_caches_exact.json"), "w", encoding="utf-8") as f:
         json.dump({"old_foot": args.old_foot, "old_thorax": args.old_thorax, "environment": C.environment_record()}, f, indent=1)
     print("done")

@@ -505,7 +505,7 @@ def fig_calibration():
     oy, oy1, oy3 = d["observed_median_mm"], d["observed_q1"], d["observed_q3"]
     n = d["n_feet"].astype(int)
     fig, ax = plt.subplots(figsize=(L.WIDTH_1COL, 3.3), constrained_layout=True)
-    lim = (0.3, float(max(px3.max(), oy3.max())) * 1.05)
+    lim = (0.0, float(max(px3.max(), oy3.max())) * 1.05)  # from zero: the lowest deciles must stay in view
     ax.plot(lim, lim, color=GRAY, lw=LW, ls=(0, (4, 2.5)), label="Identity")
     ax.errorbar(
         px,
@@ -599,8 +599,8 @@ def fig_registration():
     labels = []
     for i, (key, label) in enumerate(
         (
-            ("lowest_e_hat", "Lowest $\\hat{e}$\nregion"),
-            ("highest_e_hat", "Highest $\\hat{e}$\nregion"),
+            ("lowest_e_hat", "Lowest\n$\\hat{e}$ region"),
+            ("highest_e_hat", "Highest\n$\\hat{e}$ region"),
         )
     ):
         y = c300["d_target_mm"][c300["region"] == key]
@@ -618,7 +618,7 @@ def fig_registration():
         a.hlines(q2, i - 0.33, i + 0.33, color=BLACK, lw=1.4)
         labels.append(label)
     a.set_xticks([0, 1])
-    a.set_xticklabels(labels)
+    a.set_xticklabels(labels, fontsize=6.5)
     a.set_xlim(-0.6, 1.6)
     a.set_ylim(0, None)
     a.set_ylabel("$d_{\\mathrm{target}}$ (mm), 300 trials")

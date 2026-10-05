@@ -186,15 +186,16 @@ def main():
         done,
     )
     r36 = J("r36_thorax.json")
-    tids = sorted(r36["per_case_sr"])
-    write(
-        "thorax_per_case.csv",
-        ["case"] + list(m33),
-        [[h] + [r36["per_case_sr"][h][m] for m in m33] for h in tids],
-        "Thorax (100 test cases): field metrics per case",
-        "r36.per_case_sr",
-        done,
-    )
+    if r36 is not None:  # the thoracic analysis may still be pending when the foot CSVs are exported
+        tids = sorted(r36["per_case_sr"])
+        write(
+            "thorax_per_case.csv",
+            ["case"] + list(m33),
+            [[h] + [r36["per_case_sr"][h][m] for m in m33] for h in tids],
+            "Thorax (100 test cases): field metrics per case",
+            "r36.per_case_sr",
+            done,
+        )
     rc = J("rC_sensitivity.json")
     if rc is not None:
         rows = []

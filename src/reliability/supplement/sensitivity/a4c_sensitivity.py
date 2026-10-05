@@ -6,8 +6,9 @@ Design:
 - foot only (48); the SR network is trained ONCE per foot (SR_LR/SR_ITERS/seed of the caches) and all variants use the
  same reconstructed volume — none of the varied parameters acts before the SR;
 - each variant redoes, with the same functions of the package: reference (0.5 mm) and its 120 000 points, S_interp,
- trilinear mesh and SR mesh, e(v) and the 9 features; the "base" variant must reproduce foot_cache bit by bit
- (control);
+ trilinear mesh and SR mesh, e(v) and the 9 features; the "base" variant must reproduce foot_cache (control): V and F
+ exactly, e and e_tri within CONTROL_TOL_MM (the main caches store e as the distance to the float32 nearest point of the
+ reference, see supplement/rebuild_caches_exact.py; the variants recompute the exact distance in float64);
 - reliability field per variant: LOFO with the forest configuration selected PER FOLD in the main model
  (rf_selection_rf9_sr_tpe.json), without a new search (same reading as the ablation, §2.10);
 - per-foot metrics: median e(v) SR and trilinear, rho per vertex and regional, AUROC of the top decile; paired
@@ -214,19 +215,28 @@ def sha_script():
         return hashlib.sha256(f.read()).hexdigest()
 
 
+CONTROL_TOL_MM = 1e-3  # e and e_tri of the base variant against foot_cache (observed differences are below 1e-4 mm)
+CONTROL_TOL_RHO = 5e-3  # per-foot rho / AUROC of the base variant against r32 / r33 (forest refitted on that e)
+
+
 def base_control(output):
-    """The base variant must reproduce foot_cache (e, F, V, e_tri) bit by bit."""
+    """The base variant must reproduce foot_cache: V and F exactly, e and e_tri within CONTROL_TOL_MM. Returns the
+    booleans per array and the largest absolute difference of e and e_tri (mm)."""
     z = np.load(output, allow_pickle=False)
     ident = os.path.basename(output)[:-4]
     c = np.load(os.path.join(C.A4_CACHE_FOOT, ident + ".npz"), allow_pickle=False)
-    res = {}
+    res, diffs = {}, {}
     for kk in ("e", "F", "V", "e_tri"):
         a, b = z["base__" + kk], c[kk]
-        res[kk] = bool(
-            a.shape == b.shape
-            and np.array_equal(a.astype(np.float32), b.astype(np.float32))
-        )
-    return res
+        if a.shape != b.shape:
+            res[kk] = False
+            continue
+        if kk in ("e", "e_tri"):
+            diffs[kk] = float(np.abs(a.astype(np.float64) - b.astype(np.float64)).max())
+            res[kk] = bool(diffs[kk] <= CONTROL_TOL_MM)
+        else:
+            res[kk] = bool(np.array_equal(a.astype(np.float32), b.astype(np.float32)))
+    return res, diffs
 
 
 def feet_list():
@@ -260,8 +270,11 @@ def process(args):
             "already done" if meta is None else "ok (%.0fs)" % meta["seconds"]["total"],
         )
         if args.control or i == 1:
-            cb = base_control(output)
-            msg += " | base reproduces the cache: %s" % cb
+            cb, diffs = base_control(output)
+            msg += " | base reproduces the cache: %s (max |diff| mm: %s)" % (
+                cb,
+                {k: "%.1e" % v for k, v in diffs.items()},
+            )
             if not all(cb.values()):
                 print(msg, flush=True)
                 raise SystemExit("base control FAILED")
@@ -380,30 +393,27 @@ def analyze(args):
             encoding="utf-8",
         )
     )["per_case_sr"]
-    tol = 1e-9
-    control = {
-        "base_rho_equals_r32": bool(
-            all(
-                abs(base[h]["rho_vertex"] - ref[h]["rho_vertex"]) < 1e-12 for h in ids
-            )
+    dev = {
+        "rho_vertex": max(abs(base[h]["rho_vertex"] - ref[h]["rho_vertex"]) for h in ids),
+        "e_median_sr_mm": max(abs(base[h]["e_median_sr"] - r31[h]["sr"]["median_mm"]) for h in ids),
+        "e_median_tri_mm": max(
+            abs(base[h]["e_median_tri"] - r31[h]["trilinear"]["median_mm"]) for h in ids
         ),
+        "rho_region": max(abs(base[h]["rho_region"] - r33[h]["rho_region"]) for h in ids),
+        "auroc_decile": max(abs(base[h]["auroc_decile"] - r33[h]["auroc_decile"]) for h in ids),
+    }
+    control = {
+        "base_rho_equals_r32": bool(dev["rho_vertex"] <= CONTROL_TOL_RHO),
         "base_equals_r31": bool(
-            all(
-                abs(base[h]["e_median_sr"] - r31[h]["sr"]["median_mm"]) < tol
-                and abs(base[h]["e_median_tri"] - r31[h]["trilinear"]["median_mm"])
-                < tol
-                for h in ids
-            )
+            dev["e_median_sr_mm"] <= CONTROL_TOL_MM and dev["e_median_tri_mm"] <= CONTROL_TOL_MM
         ),
         "base_region_auroc_equals_r33": bool(
-            all(
-                abs(base[h]["rho_region"] - r33[h]["rho_region"]) < 1e-12
-                and abs(base[h]["auroc_decile"] - r33[h]["auroc_decile"]) < 1e-12
-                for h in ids
-            )
+            dev["rho_region"] <= CONTROL_TOL_RHO and dev["auroc_decile"] <= CONTROL_TOL_RHO
         ),
+        "largest_absolute_deviation_per_foot": {k: float(v) for k, v in dev.items()},
+        "tolerances": {"mm": CONTROL_TOL_MM, "rho_auroc": CONTROL_TOL_RHO},
     }
-    if not all(control.values()):
+    if not all(v for k, v in control.items() if isinstance(v, bool)):
         raise SystemExit("base control FAILED: %s" % control)
     out = {
         "section": "Supplement: sensitivity",
