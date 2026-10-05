@@ -232,7 +232,11 @@ def base_control(output):
             res[kk] = False
             continue
         if kk in ("e", "e_tri"):
-            diffs[kk] = float(np.abs(a.astype(np.float64) - b.astype(np.float64)).max())
+            # beyond EXACT_MAX_MM the pipeline keeps the sampled distance while the rebuilt caches hold the exact
+            # one (a handful of artefact vertices); the control covers the vertices within EXACT_MAX_MM
+            near = b.astype(np.float64) <= C.EXACT_MAX_MM
+            diffs[kk] = float(np.abs(a.astype(np.float64) - b.astype(np.float64))[near].max())
+            diffs[kk + "_n_beyond_exact_max"] = int((~near).sum())
             res[kk] = bool(diffs[kk] <= CONTROL_TOL_MM)
         else:
             res[kk] = bool(np.array_equal(a.astype(np.float32), b.astype(np.float32)))
@@ -271,9 +275,9 @@ def process(args):
         )
         if args.control or i == 1:
             cb, diffs = base_control(output)
-            msg += " | base reproduces the cache: %s (max |diff| mm: %s)" % (
+            msg += " | base reproduces the cache: %s (max |diff| mm within EXACT_MAX_MM: %s)" % (
                 cb,
-                {k: "%.1e" % v for k, v in diffs.items()},
+                {k: ("%.1e" % v if isinstance(v, float) else v) for k, v in diffs.items()},
             )
             if not all(cb.values()):
                 print(msg, flush=True)
