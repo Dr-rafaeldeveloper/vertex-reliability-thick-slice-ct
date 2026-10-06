@@ -1,4 +1,4 @@
-"""Clean version (journal style) of the six figures of the paper, drawn ONLY from the CSVs already exported by the
+"""Clean version (journal style) of the figures, drawn ONLY from the CSVs already exported by the
 generator scripts (`figs/data/*.csv` and `results_figure_data/*.csv`). Recomputes nothing: every number that
 appears in the figure comes from a CSV, whose SHA-256 is written to `figs/clean/clean_figures_provenance.json`.
 

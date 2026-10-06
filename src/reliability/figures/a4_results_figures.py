@@ -1,6 +1,6 @@
-"""RESULTS figures of the paper (Section 3), generated only from the caches/JSONs/CSVs of the current round:
-Fig. 5 predicted field x measured error on the representative foot + rho per foot; Fig. 6 calibration by deciles
-(foot).
+"""Results figures (Section 3), generated only from the caches/JSONs/CSVs of the current round: predicted field x
+measured error on the representative foot + rho per foot, and calibration by deciles (foot). The internal names
+fig5/fig6 are export labels (manuscript: field vs error = Fig. 2, calibration = Fig. 3).
 
 Outside the package hash (subfolder `figures/`). Reuses the utilities of a4_method_figures (load_foot,
 loo_prediction, projection_2d, export, save). Labels in English with the terms of the manuscript; vector PDF

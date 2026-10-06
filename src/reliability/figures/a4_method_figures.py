@@ -1,5 +1,7 @@
-"""Figures of Section 2 of the paper: Fig. 1 framework; Fig. 2 shape-disagreement
-descriptor; Fig. 3 intensity- vs surface-space uncertainty; Fig. 4 reliability-guided registration.
+"""Method figures (data exports and draft plots; the manuscript figures are assembled by a4_final_figures.py):
+framework, shape-disagreement descriptor, intensity- vs surface-space uncertainty and reliability-guided registration.
+The internal names fig1-fig4 are export labels, not the manuscript numbering (manuscript: pipeline = Fig. 1, shape
+disagreement = Fig. 5, uncertainty = Fig. 4, registration = Fig. 7).
 
 Outside the package hash (subfolder `figures/`: `a4_config.code_hash` only covers `src/reliability/*.py`), so as not
 to alter the traceability of the caches generated in Phase 2. Reads only `output/validation/reliability/foot_cache/`

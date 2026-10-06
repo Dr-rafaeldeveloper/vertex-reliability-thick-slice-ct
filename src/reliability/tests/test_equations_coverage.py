@@ -1,5 +1,5 @@
-"""Closed-value tests for the equations that the coverage table (COVERAGE_EQUATIONS_2026-09-16.md) flagged as
-"check only": Eq. 19 (mean of the T = 200 trees and hyperparameters), Eq. 24 (mean inside the variance accumulator),
+"""Closed-value tests for equations that an internal equation-coverage review (not part of the repository) flagged
+as "check only": Eq. 19 (mean of the trees of the forest; the fixed configuration tested here is the non-nested path), Eq. 24 (mean inside the variance accumulator),
 Eq. 35 (Spearman per case), Eq. 38–39 (regional means), Eq. 47–50 (ablation: isolated, reduced and Δ per case)
 and Eq. 4 (L1 objective = mean absolute error). Outside the package hash (subfolder tests/)."""
 

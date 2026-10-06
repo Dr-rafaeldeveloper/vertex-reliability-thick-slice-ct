@@ -1,5 +1,6 @@
 """Exports the data of the new figures of the paper: foot CT slices for the
-pipeline infographic (Fig. 1) and the thorax mesh, slices and correlations (thorax figure). Outside the package
+pipeline infographic (Fig. 1) and the thorax mesh, slices and correlations (Fig. 6; the export files keep the
+internal prefix fig7_). Outside the package
 hash (subfolder `figures/`); uses the SAME chain as a4_run_foot / a4_run_thorax (like a4_mesh_faces.py) and checks
 the regenerated vertices against the cache. Writes nothing to foot_cache / thorax_cache nor to results/.
 
