@@ -169,7 +169,8 @@ def _record_kmeans(
     members = {r: np.where(labels == r)[0] for r in regs}
     # Regions with fewer than K vertices cannot provide "K = 200 surface correspondences" (§2.11): they become
     # ineligible for selection and for the random draw (consequence of the quoted K, not a new parameter).
-    # Measured on the archived caches: 3 of 48 feet have a k-means region with 1-3 vertices (isolated fragment).
+    # A k-means region may hold only a few vertices (isolated fragment); regions with fewer than K vertices are
+    # ineligible. In the exact-error run no region was ineligible; in the sampled run, 2 of 48 feet had one.
     eligible = np.array([r for r in regs if len(members[r]) >= K])
     if len(eligible) == 0:
         raise ValueError(

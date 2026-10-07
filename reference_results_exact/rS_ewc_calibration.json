@@ -1,0 +1,1961 @@
+{
+ "description": "EWC calibration per subnetwork: target ratio 0.10, band [0.090, 0.110], at most 14 probes",
+ "n_subnetworks": 240,
+ "n_converged": 240,
+ "n_outside_band": 0,
+ "ratio": {
+  "min": 0.09030601970945157,
+  "median": 0.1004970686551833,
+  "max": 0.10964439171620094
+ },
+ "probes": {
+  "min": 3,
+  "median": 7.0,
+  "max": 12
+ },
+ "per_subnetwork": [
+  {
+   "case": "z001_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5582846.425848044,
+   "ratio": 0.10146586838505889,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z001_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5137862.094576732,
+   "ratio": 0.09808247784433961,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z001_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 4839177.899241144,
+   "ratio": 0.10241233181640724,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z001_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 3836970.7426162767,
+   "ratio": 0.10240746014116435,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z001_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 779.9155390536935,
+   "ratio": 0.10703423481884472,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z002_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6484082.370533497,
+   "ratio": 0.10157813622265972,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z002_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 6460261.412095152,
+   "ratio": 0.10726823828752309,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z002_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 5933126.616159595,
+   "ratio": 0.10088057672647396,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z002_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6417306.16541542,
+   "ratio": 0.0966361834643354,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z002_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2152.6891882614605,
+   "ratio": 0.09776176827148153,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z003_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 9392842.103846835,
+   "ratio": 0.10037603350695119,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z003_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9545746.06222976,
+   "ratio": 0.10249077062206262,
+   "n_probes": 6,
+   "converged": true
+  },
+  {
+   "case": "z003_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9108037.43416714,
+   "ratio": 0.09329644604473684,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z003_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8286497.1194853885,
+   "ratio": 0.10157277799945032,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z003_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 6558255.534848611,
+   "ratio": 0.09448054011106292,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z004_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 9758881.434879461,
+   "ratio": 0.1014093705986066,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z004_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 7326.628097187599,
+   "ratio": 0.10743797446392914,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z004_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9105976.418472918,
+   "ratio": 0.10050011537353523,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z004_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8484494.792667339,
+   "ratio": 0.09791364964523301,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z004_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1533.0509672537573,
+   "ratio": 0.10467869531320549,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z005_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6645337.807245034,
+   "ratio": 0.09120541928198365,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z005_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2302.7209206538655,
+   "ratio": 0.1002065340357374,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z005_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 6644402.996930968,
+   "ratio": 0.09689882274854913,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z005_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 5639234.714957702,
+   "ratio": 0.10238405818757274,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z005_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1188.6227138084466,
+   "ratio": 0.10654817434150968,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z006_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 10807750.50652285,
+   "ratio": 0.09913583843375164,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z006_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9018415.865156677,
+   "ratio": 0.10296534426469883,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z006_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9350918.685445035,
+   "ratio": 0.10141807736265142,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z006_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 9416874.15850645,
+   "ratio": 0.10584149918810704,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z006_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 14114.7288689425,
+   "ratio": 0.09106714415978574,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z007_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 7951350.332534104,
+   "ratio": 0.09363209429662353,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z007_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9334385.467902033,
+   "ratio": 0.10847540812387312,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z007_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8115861.012963242,
+   "ratio": 0.10100250293172731,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z007_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 7358373.044652206,
+   "ratio": 0.10352078404292257,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z007_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 7151883.115727756,
+   "ratio": 0.1067782966881264,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z008_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 2407.3547342884112,
+   "ratio": 0.097544481639138,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z008_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2259.6772134960593,
+   "ratio": 0.10467183406084363,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z008_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 1812.1406190671055,
+   "ratio": 0.1030151924310065,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z008_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 3164.9942655855257,
+   "ratio": 0.09533709729978018,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z008_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 931.6069499388357,
+   "ratio": 0.09184410798779354,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z009_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 7987079.376725653,
+   "ratio": 0.10244072800299656,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z009_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 6445713.002650836,
+   "ratio": 0.10007718331182891,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z009_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 7625512.633123693,
+   "ratio": 0.1025520001925138,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z009_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4342570.409538678,
+   "ratio": 0.09155256721015909,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z009_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 8484.735702124484,
+   "ratio": 0.10355045115240974,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z010_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 10459892.56480881,
+   "ratio": 0.10267742971117456,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z010_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 7447954.801294833,
+   "ratio": 0.10174115358097723,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z010_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8872544.49650876,
+   "ratio": 0.09556952470354362,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z010_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8409165.165415324,
+   "ratio": 0.09500434654377395,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z010_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2679.003303823466,
+   "ratio": 0.10548646271947956,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z012_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 11299859.015998991,
+   "ratio": 0.10436598637791107,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z012_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 10019535.819092011,
+   "ratio": 0.10384687303425433,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z012_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 13853.38290987388,
+   "ratio": 0.09440966621450624,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z012_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4834.407738356592,
+   "ratio": 0.09971894735947326,
+   "n_probes": 6,
+   "converged": true
+  },
+  {
+   "case": "z012_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 14475.978643290935,
+   "ratio": 0.09263796805362697,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z013_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 1086.1142362928829,
+   "ratio": 0.09888342927140682,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z013_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2149.471654587045,
+   "ratio": 0.09677345621583877,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z013_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 1389.3788702298468,
+   "ratio": 0.10520580442132126,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z013_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 1084.6873418978275,
+   "ratio": 0.0998106254983117,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z013_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1605.6360003089185,
+   "ratio": 0.10206246529604696,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z015_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 8127940.196407472,
+   "ratio": 0.09646911372479178,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z015_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 1897.6540545849975,
+   "ratio": 0.09807484433100662,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z015_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 2772.5490266806382,
+   "ratio": 0.10017514175499061,
+   "n_probes": 6,
+   "converged": true
+  },
+  {
+   "case": "z015_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 5936918.563292546,
+   "ratio": 0.10231652463529342,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z015_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1496.7200286544607,
+   "ratio": 0.0942584951421443,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z016_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 10850243.215193467,
+   "ratio": 0.10587337200472283,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z016_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 7367548.831999373,
+   "ratio": 0.09490032929633156,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z016_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 10479345.453528374,
+   "ratio": 0.10285990527187805,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z016_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 9715292.467167983,
+   "ratio": 0.09408365246888291,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z016_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3006.0776480482637,
+   "ratio": 0.09822765509432684,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z017_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6850914.161194987,
+   "ratio": 0.09179807302391421,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z017_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9289.732301300675,
+   "ratio": 0.09107577549923568,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z017_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9102.572826468868,
+   "ratio": 0.09893754323793627,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z017_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8124390.946752335,
+   "ratio": 0.10921551557914912,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z017_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3182.9734440733196,
+   "ratio": 0.10719560440198432,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z019_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 2994.859630218745,
+   "ratio": 0.09196695157148421,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z019_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 11355.09267176098,
+   "ratio": 0.09034470506406797,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z019_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 1652.8697586949415,
+   "ratio": 0.10184861752933973,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z019_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 2195.6877357719063,
+   "ratio": 0.10333182313178281,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z019_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 972.4152037340858,
+   "ratio": 0.10125575957001627,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z020_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5387378.368166401,
+   "ratio": 0.09294234305445485,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z020_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2038.9477666649468,
+   "ratio": 0.09901939178536762,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z020_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8635.794425620286,
+   "ratio": 0.0980512904850518,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z020_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6456440.806191728,
+   "ratio": 0.1068721171003291,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z020_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1529.2811337478113,
+   "ratio": 0.09532796512409883,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z021_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4076.1737196190525,
+   "ratio": 0.09792058927356183,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z021_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 12466.859065106959,
+   "ratio": 0.09809101638532121,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z021_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 12216.50754145835,
+   "ratio": 0.09777582989430043,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z021_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 15343.818298801516,
+   "ratio": 0.09559148601422063,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z021_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3075.7905946792375,
+   "ratio": 0.10718301701757041,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z023_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6829284.673681126,
+   "ratio": 0.0968641989073471,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z023_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2430.177910043616,
+   "ratio": 0.0938156200478207,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z023_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 5675555.555937197,
+   "ratio": 0.10243052939770234,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z023_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6022511.688373217,
+   "ratio": 0.09672906417718122,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z023_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3007.8871830804987,
+   "ratio": 0.10237315852167526,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z025_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4687774.959356582,
+   "ratio": 0.09477424172165953,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z025_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5199459.897389029,
+   "ratio": 0.1017819877231688,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z025_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 4874787.325166162,
+   "ratio": 0.10047827119948262,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z025_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4837024.123078999,
+   "ratio": 0.10411163891332981,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z025_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 954.2518867605334,
+   "ratio": 0.09989808422639326,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z026_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 7070381.869447813,
+   "ratio": 0.09908848947957848,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z026_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5637447.637375473,
+   "ratio": 0.0927558487156436,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z026_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8435.649693441774,
+   "ratio": 0.0959701367872935,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z026_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4959761.771646231,
+   "ratio": 0.10270366072295327,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z026_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3325.9672970303336,
+   "ratio": 0.10880674250280044,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z027_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6382041.283519214,
+   "ratio": 0.10284330460360622,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z027_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2001.488348285189,
+   "ratio": 0.0994339677213695,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z027_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 5514191.806874152,
+   "ratio": 0.09238071120333259,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z027_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 7556353.915058884,
+   "ratio": 0.09845567017445118,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z027_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2107.167536334471,
+   "ratio": 0.09111300041044444,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z028_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 2500.196955590479,
+   "ratio": 0.09542775973817255,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z028_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5293107.78229248,
+   "ratio": 0.09780096029704685,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z028_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 2881.7349208422097,
+   "ratio": 0.10875158583365206,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z028_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 1571.7785587836217,
+   "ratio": 0.10556023653010503,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z028_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2578.025231993538,
+   "ratio": 0.10964439171620094,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z029_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 8082.998024224272,
+   "ratio": 0.10656617821027858,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z029_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8773923.551273499,
+   "ratio": 0.10286948365180587,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z029_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9594004.225471212,
+   "ratio": 0.10408465444204738,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z029_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 3181.802857133551,
+   "ratio": 0.09030601970945157,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z029_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1882.4299702953344,
+   "ratio": 0.10170940941701932,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z030_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 8965988.7685354,
+   "ratio": 0.10049402193683138,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z030_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3072.99048021364,
+   "ratio": 0.1040964234077475,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z030_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9025.281751593695,
+   "ratio": 0.10799574687440912,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z030_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6576562.53825202,
+   "ratio": 0.10237927464759757,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z030_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3468.5670423577017,
+   "ratio": 0.10617915696177493,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z031_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 10060488.68791933,
+   "ratio": 0.09831540167737814,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z031_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8141578.768845706,
+   "ratio": 0.10174713682792129,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z031_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9839754.95217788,
+   "ratio": 0.10188988467901357,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z031_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8914701.677706284,
+   "ratio": 0.09621790720373723,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z031_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 11857.842231155888,
+   "ratio": 0.09590873855128572,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z032_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 3395.970405648315,
+   "ratio": 0.09040356558954049,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z032_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8179282.153920242,
+   "ratio": 0.10349198359072365,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z032_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 2062.872763109731,
+   "ratio": 0.09304091622994307,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z032_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 2721.519348583095,
+   "ratio": 0.09143609659116596,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z032_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3497.538742231884,
+   "ratio": 0.10725816887998722,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z033_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 9125267.254043689,
+   "ratio": 0.10287291232062361,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z033_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8657521.014760202,
+   "ratio": 0.10270683194362468,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z033_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9682789.146179719,
+   "ratio": 0.10294504813705332,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z033_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 2634.1221195271937,
+   "ratio": 0.0924582989895127,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z033_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1907.6653598206008,
+   "ratio": 0.10253717566781152,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z037_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5902408.245931637,
+   "ratio": 0.09406790252734569,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z037_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 7959.414011328396,
+   "ratio": 0.09098794967495989,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z037_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 6480780.26819654,
+   "ratio": 0.10300075970817861,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z037_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4738862.552680685,
+   "ratio": 0.09456015279291707,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z037_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3186.734614380336,
+   "ratio": 0.10286638968598537,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z038_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4571.3131180520695,
+   "ratio": 0.09055822132496377,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z038_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2804.5834341902473,
+   "ratio": 0.10028191907578757,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z038_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8339.579466516643,
+   "ratio": 0.10359729701455438,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z038_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 7006182.6717511825,
+   "ratio": 0.10546538486075313,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z038_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1256.0726151960432,
+   "ratio": 0.0994512904320025,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z040_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 2160.6101922631915,
+   "ratio": 0.0950679246092992,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z040_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2701.503036523005,
+   "ratio": 0.0972264334567201,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z040_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 4172.565901093788,
+   "ratio": 0.10250059088174786,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z040_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8279.434102554285,
+   "ratio": 0.09382460937610082,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z040_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1430.7681580156006,
+   "ratio": 0.09441354231801491,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z041_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 3286.0541591313877,
+   "ratio": 0.09042262434434513,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z041_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9154.726272851834,
+   "ratio": 0.10387823818399652,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z041_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 1564.6087721925478,
+   "ratio": 0.10018158761669951,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z041_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 2071.396967493216,
+   "ratio": 0.1056480007432583,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z041_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1015.3390631272787,
+   "ratio": 0.1014532926912094,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z042_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4815536.435836249,
+   "ratio": 0.10128094794805316,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z042_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 4421846.917236921,
+   "ratio": 0.09640485660199692,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z042_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 4851946.473437852,
+   "ratio": 0.10212844263866314,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z042_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 3333961.8627460627,
+   "ratio": 0.10507358034993952,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z042_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 4085.335366004092,
+   "ratio": 0.10821368302908226,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z043_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5076.139935994006,
+   "ratio": 0.09263348357093809,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z043_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8678077.322760615,
+   "ratio": 0.1032745281134687,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z043_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 7240.467015742089,
+   "ratio": 0.1009864514566494,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z043_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 20358.669912973073,
+   "ratio": 0.0904418403248118,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z043_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2720.024209930225,
+   "ratio": 0.10784150965205126,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z044_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5547482.782381035,
+   "ratio": 0.09763419344472164,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z044_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3840080.3272772054,
+   "ratio": 0.0981478384890593,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z044_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 5052766.596179352,
+   "ratio": 0.10126097131216268,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z044_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 5208.614618654732,
+   "ratio": 0.10551654645162634,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z044_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 4690.886129128663,
+   "ratio": 0.10590849736759898,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z045_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 14972528.707325945,
+   "ratio": 0.1058720827536863,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z045_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 14779.351107523476,
+   "ratio": 0.10632300652538193,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z045_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 12115.820093170045,
+   "ratio": 0.10011126477390826,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z045_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4468.240807010017,
+   "ratio": 0.09079081719004957,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z045_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2216.6061342943253,
+   "ratio": 0.10501505625605415,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z048_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5715037.654810331,
+   "ratio": 0.10818388228128935,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z048_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3671863.855360258,
+   "ratio": 0.10006629207940297,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z048_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 5135228.294447777,
+   "ratio": 0.1033358814296873,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z048_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4680857.537468655,
+   "ratio": 0.10934269209247507,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z048_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1304.8850866752107,
+   "ratio": 0.09438387253216314,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z049_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 9164273.582265796,
+   "ratio": 0.10257942078713762,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z049_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3242.2082868839316,
+   "ratio": 0.09196074690066658,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z049_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 8388955.77308125,
+   "ratio": 0.09640332016950708,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z049_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 8516784.02444963,
+   "ratio": 0.10127391134796283,
+   "n_probes": 12,
+   "converged": true
+  },
+  {
+   "case": "z049_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 2781.676976757686,
+   "ratio": 0.09387476857912205,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z054_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 5067112.120343001,
+   "ratio": 0.10014602565393373,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z054_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5064131.7785062445,
+   "ratio": 0.10039611084658653,
+   "n_probes": 6,
+   "converged": true
+  },
+  {
+   "case": "z054_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 6353049.026911683,
+   "ratio": 0.10653463776725806,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z054_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 5304548.769660031,
+   "ratio": 0.1020277254681348,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z054_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 6138819.072415474,
+   "ratio": 0.09639906743372849,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z056_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 12773997.264777519,
+   "ratio": 0.10145325445227339,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z056_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 11208.451006985259,
+   "ratio": 0.09400576301166942,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z056_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 7451.723347864486,
+   "ratio": 0.10228765280760195,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z056_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 10755041.086726904,
+   "ratio": 0.10411338675607744,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z056_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1953.4321745299903,
+   "ratio": 0.10371615423489662,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z057_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 15538877.77635551,
+   "ratio": 0.10859960379658835,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z057_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 9598539.304188287,
+   "ratio": 0.10139458163053125,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z057_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 13829731.433690958,
+   "ratio": 0.09589164605117724,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z057_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 9666046.532940412,
+   "ratio": 0.10036822335788267,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z057_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 9733727.25188138,
+   "ratio": 0.10885835678781845,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z058_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 11386327.886304345,
+   "ratio": 0.09297617403242239,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z058_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 8315389.276802327,
+   "ratio": 0.09062041116732888,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z058_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 11509435.294253895,
+   "ratio": 0.09704937602065569,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z058_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 11850128.920249958,
+   "ratio": 0.09949395169981877,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z058_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 8641345.248639265,
+   "ratio": 0.10895496437412043,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z060_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 7254346.14703914,
+   "ratio": 0.10385429080948892,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z060_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5859067.954512128,
+   "ratio": 0.09711176040048994,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z060_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 9512.85474902555,
+   "ratio": 0.09770920034413294,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z060_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6841466.445590716,
+   "ratio": 0.1028130792221145,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z060_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 3305.9710429965626,
+   "ratio": 0.10453541449807967,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z061_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4127.68834347384,
+   "ratio": 0.09113024264779379,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z061_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3115.2672288689937,
+   "ratio": 0.09569250357733088,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z061_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 2591.9932625300535,
+   "ratio": 0.10126056520524472,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z061_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 2250.794822943224,
+   "ratio": 0.10759502436832391,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z061_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 935.934828288726,
+   "ratio": 0.09469304972112837,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z062_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6189088.02914745,
+   "ratio": 0.10724173842592266,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z062_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 5805334.259723104,
+   "ratio": 0.0990576993804753,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z062_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 7602.808292316164,
+   "ratio": 0.10515805040629973,
+   "n_probes": 4,
+   "converged": true
+  },
+  {
+   "case": "z062_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4370048.507754791,
+   "ratio": 0.0941118601423388,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z062_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1600.0100756906554,
+   "ratio": 0.0928320742204145,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z063_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 6050232.226143438,
+   "ratio": 0.095286439763445,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z063_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 3494.3357051188723,
+   "ratio": 0.10086229040781393,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z063_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 4544.501388644674,
+   "ratio": 0.09889389637947757,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z063_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 6850365.115603811,
+   "ratio": 0.10388828472356228,
+   "n_probes": 11,
+   "converged": true
+  },
+  {
+   "case": "z063_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 1889.2870182732659,
+   "ratio": 0.10758797360844533,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z064_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 4385014.446539063,
+   "ratio": 0.10361680819821906,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z064_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 2387026.972449995,
+   "ratio": 0.09245390501279113,
+   "n_probes": 8,
+   "converged": true
+  },
+  {
+   "case": "z064_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 2630.2405996285197,
+   "ratio": 0.0994448883389283,
+   "n_probes": 5,
+   "converged": true
+  },
+  {
+   "case": "z064_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 4894467.222388192,
+   "ratio": 0.10000541133869745,
+   "n_probes": 9,
+   "converged": true
+  },
+  {
+   "case": "z064_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 979.2675043493169,
+   "ratio": 0.09194930068575104,
+   "n_probes": 3,
+   "converged": true
+  },
+  {
+   "case": "z065_foot.nii.gz",
+   "subnetwork": 0,
+   "lambda": 19165799.06818192,
+   "ratio": 0.10616078570674842,
+   "n_probes": 6,
+   "converged": true
+  },
+  {
+   "case": "z065_foot.nii.gz",
+   "subnetwork": 1,
+   "lambda": 11429916.561676167,
+   "ratio": 0.09765748582075173,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z065_foot.nii.gz",
+   "subnetwork": 2,
+   "lambda": 13720502.086174088,
+   "ratio": 0.10486397626406464,
+   "n_probes": 7,
+   "converged": true
+  },
+  {
+   "case": "z065_foot.nii.gz",
+   "subnetwork": 3,
+   "lambda": 14017409.342976548,
+   "ratio": 0.09740926447485428,
+   "n_probes": 10,
+   "converged": true
+  },
+  {
+   "case": "z065_foot.nii.gz",
+   "subnetwork": 4,
+   "lambda": 8451833.667214692,
+   "ratio": 0.10251847364773384,
+   "n_probes": 9,
+   "converged": true
+  }
+ ],
+ "environment": {
+  "data": "2026-10-07T20:39:36",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "593f4f1769ede06c",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "dfb3fb21028fa6055324ab0cdf679011bf9b0513d4d86d6a3ffd2f415c65c505",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

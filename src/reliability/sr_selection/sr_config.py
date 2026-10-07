@@ -13,7 +13,7 @@ from __future__ import annotations
 import hashlib
 import os
 
-# LITERAL value of §2.4 ("initial learning rate of 1e-3", "2500 iterations"): reference point; does not change when
+# Original design (learning rate 1e-3, 2500 iterations), evaluated as the reference point of the search; does not change when
 # the selected one is adopted in a4_config (the test compares a4_config with the published one OR with the adopted
 # one recorded)
 PUBLISHED_SR = (1e-3, 2500)

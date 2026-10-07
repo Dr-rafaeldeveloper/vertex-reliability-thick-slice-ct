@@ -76,8 +76,10 @@ def cohort(current_cache: str, original_cache: str, n: int, results_cur: str, re
     cur = per_case_median(current_cache, "e")
     orig = per_case_median(original_cache, "e")
     ids = sorted(set(cur) & set(orig))
+    cur_t, orig_t = per_case_median(current_cache, "e_tri"), per_case_median(original_cache, "e_tri")
     out = {
         "n": len(ids),
+        "per_case_median_mm": {h: {"current_sr": cur[h], "original_sr": orig[h], "current_trilinear": cur_t[h], "original_trilinear": orig_t[h]} for h in ids},
         "e_median_sr_mm": paired(cur, orig, n),
         "e_median_tri_mm": paired(per_case_median(current_cache, "e_tri"), per_case_median(original_cache, "e_tri"), n),
         "sr_vs_tri_current": sr_vs_tri(current_cache, ids),

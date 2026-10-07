@@ -198,7 +198,7 @@ ROUGHNESS_LAMBDA = 0.5  # Eq. 11 "λ = 0.5"
 # delta_z = through-plane spacing of the RECONSTRUCTED GRID (0.5 mm foot; 1.0 mm thorax); t_slice = k·Δz
 RF_PARAMS = dict(
     n_estimators=200, max_depth=8, min_samples_leaf=50, max_features=3
-)  # §2.7.3 "200 trees, max depth 8, min 50 samples per leaf"
+)  # fallback of the non-nested path only (RF_SELECTION = "fixed"); the paper reports the nested selection
 # revised: §2.7.3 "decision trees trained under randomized sampling and feature-selection procedures [36]" — with
 # max_features=1.0 (sklearn default, value of the historical runs) there is NO random selection of variables. The
 # text does not fix the number; for p = 9 the three canonical rules coincide: p/3 = 3 (regression; default mtry of
@@ -277,7 +277,7 @@ DS_FISHER_BATCHES = (
 DS_EWC_TOLERANCE = (
     0.10  # relative tolerance of the penalty/loss ratio at t = 50 (10 % of 10 %)
 )
-DS_EWC_MAX_PROBES = 14  # maximum number of regularized calibration probes (bracketing + bisection)
+DS_EWC_MAX_PROBES = 14  # maximum number of calibration probes (geometric growth, then bisection in log lambda)
 DS_EWC_FACTOR_MIN = 3.0  # minimum growth of lambda per probe while the ratio does not cross the target
 # with the real prior (6000 it.) the penalty/loss ratio at t = 50 is NOT monotonic in lambda (rises to ~0.03–0.07,
 # drops into a valley near 1e8 and rises again to 0.10 near 1e9–1e10); the pure proportional adjustment got stuck
@@ -360,7 +360,7 @@ def code_hash() -> str:
     for f in sorted(os.listdir(folder)):
         if f.endswith(".py"):
             h.update(f.encode())
-            h.update(open(os.path.join(folder, f), "rb").read())
+            h.update(open(os.path.join(folder, f), "rb").read().replace(b"\r\n", b"\n"))  # independent of line endings
     return h.hexdigest()[:16]
 
 

@@ -43,6 +43,7 @@ def slope(p, e):
 def cohort(cache_dir: str, label_sr: str, label_tri: str) -> dict:
     pred, pred_t = memo(label_sr), memo(label_tri)
     sl, sl_near, n_far, mean_p, mean_e = {}, {}, {}, {}, {}
+    n_far_tri = {}
     rho = {d: {} for d in DESCRIPTORS}
     rho_t = {d: {} for d in DESCRIPTORS}
     for f in sorted(glob.glob(os.path.join(cache_dir, "*.npz"))):
@@ -53,6 +54,7 @@ def cohort(cache_dir: str, label_sr: str, label_tri: str) -> dict:
         p = pred[h]
         near = e <= C.EXACT_MAX_MM
         sl[h], sl_near[h], n_far[h] = slope(p, e), slope(p[near], e[near]), int((~near).sum())
+        n_far_tri[h] = int((et > C.EXACT_MAX_MM).sum())
         mean_p[h], mean_e[h] = float(p.mean()), float(e.mean())
         for j, d in enumerate(DESCRIPTORS):
             rho[d][h] = float(spearmanr(F[:, j], e)[0])
@@ -74,6 +76,7 @@ def cohort(cache_dir: str, label_sr: str, label_tri: str) -> dict:
         "slope_without_vertices_beyond_exact_max": E.summary(list(sl_near.values())),
         "cases_with_slope_above_one": {"all_vertices": int(sum(v > 1 for v in sl.values())), "without_beyond_exact_max": int(sum(v > 1 for v in sl_near.values()))},
         "vertices_beyond_exact_max": {"total": int(sum(n_far.values())), "cases": int(sum(v > 0 for v in n_far.values()))},
+        "vertices_beyond_exact_max_trilinear": {"total": int(sum(n_far_tri.values())), "cases": int(sum(v > 0 for v in n_far_tri.values()))},
         "between_case_compression": {
             "mean_predicted_mm_range": [float(mp.min()), float(mp.max())],
             "mean_measured_mm_range": [float(me.min()), float(me.max())],

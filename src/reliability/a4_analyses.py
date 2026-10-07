@@ -562,7 +562,7 @@ def r37(D, pred_sr):
         "trials": C.REG_TRIALS,
         "strategies": {s: E.summary(list(med[s].values())) for s in C.REG_STRATEGIES},
         # §2.11 "summarized within each case before cohort-level comparison" + Abstract "reduced
-        # median target displacement by 40 %" -> PRIMARY = 100(1 - median_cohort(med_field)/median_cohort(med_random))
+        # median target displacement" (ratio of cohort medians; the paper reports this value) -> PRIMARY = 100(1 - median_cohort(med_field)/median_cohort(med_random))
         "reduction_field_vs_random_pct_ratio_of_medians": 100.0
         * (1 - med_c / med_a),
         "reduction_field_vs_random_pct_ratio_of_medians_definition": "PRIMARY (Abstract): 100·(1 − cohort_median(median per case, field) / cohort_median(median per case, random))",

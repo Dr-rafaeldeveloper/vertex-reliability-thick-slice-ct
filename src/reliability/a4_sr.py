@@ -2,8 +2,8 @@
 
 Text: "adapted from the principle introduced by SMORE"; "reduced residual convolutional architecture
 derived from VDSR"; "10 convolutional residual layers with 48 feature channels per layer"; "48 × 48
-pixels"; "batch size of 16"; "Adam optimizer, an initial learning rate of 1e-3"; "L1 reconstruction
-objective" (Eq. 4); "2500 iterations" (rate and iterations selected by HEBO -> a4_config.SR_LR/SR_ITERS);
+pixels"; "batch size of 16"; "Adam optimizer" (learning rate selected by HEBO, a4_config.SR_LR); "L1 reconstruction
+objective" (Eq. 4); iterations selected by HEBO (a4_config.SR_ITERS); the original design used 1e-3 and 2500;
 degradation I_deg = U_k[D_k(G * I)] with Gaussian FWHM equal
 to k (Eq. 3); "the trained network was applied to planes containing the z-axis... The reconstructed
 orthogonal sections were subsequently combined to form the volumetric super-resolved CT" (the

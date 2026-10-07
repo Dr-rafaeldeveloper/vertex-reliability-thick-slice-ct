@@ -340,7 +340,7 @@ def adapt(
         # iterations, the regularization term contributed approximately 10% of the data-fitting loss" and
         # "Adaptation minimized a reconstruction objective regularized by an EWC penalty" -> fixed point:
         # REGULARIZED probes of `calibrate` iterations, starting from the initial subnetwork, adjusting lambda until the
-        # penalty/loss ratio at t = calibrate is at `fraction` (10 % relative tolerance, up to 6 probes);
+        # penalty/loss ratio at t = calibrate is at `fraction` (10 % relative tolerance, up to DS_EWC_MAX_PROBES probes; geometric growth then bisection in log lambda);
         # then the full adaptation starts from the initial subnetwork with that lambda from iteration 0.
         assert iters > calibrate, (
             "the adaptation needs more than %d iterations to measure the ratio at t = %d"

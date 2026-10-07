@@ -77,6 +77,10 @@
    "total": 302,
    "cases": 8
   },
+  "vertices_beyond_exact_max_trilinear": {
+   "total": 39,
+   "cases": 5
+  },
   "between_case_compression": {
    "mean_predicted_mm_range": [
     0.365019419382141,
@@ -360,6 +364,10 @@
    "total": 748,
    "cases": 84
   },
+  "vertices_beyond_exact_max_trilinear": {
+   "total": 369,
+   "cases": 79
+  },
   "between_case_compression": {
    "mean_predicted_mm_range": [
     0.4568974132954428,
@@ -604,7 +612,7 @@
   }
  },
  "environment": {
-  "data": "2026-10-07T19:08:07",
+  "data": "2026-10-07T20:39:52",
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26200-SP0",
   "numpy": "2.4.2",
@@ -613,7 +621,7 @@
   "skimage": "0.26.0",
   "trimesh": "4.12.2",
   "SimpleITK": "2.5.3",
-  "code_hash_reliability": "c089bc0a79214227",
+  "code_hash_reliability": "593f4f1769ede06c",
   "sr_lr": 0.0005850631055477961,
   "sr_iters": 3046,
   "ds_prior_lr": 0.001,

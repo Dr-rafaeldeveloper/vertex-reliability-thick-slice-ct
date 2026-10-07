@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 from reliability import a4_config as C
 
-REF = os.path.join(ROOT, "reference_results")
+REF = os.path.join(ROOT, "reference_results" if C.ERROR_DEFINITION == "sampled" else "reference_results_exact")  # the folder that matches a4_config.ERROR_DEFINITION
 IGNORE = (
     "_traceability",
     "environment",

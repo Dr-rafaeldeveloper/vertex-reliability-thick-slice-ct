@@ -180,8 +180,10 @@ vertices farther than `EXACT_MAX_MM` from the nearest sampled point keep that bo
 rebuilt from the caches of the reference run by `supplement/rebuild_caches_exact.py` (same surfaces, super-resolution
 and uncertainties; only the error target changed), and every analysis was repeated, including the nested forest
 selection. Results are in `reference_results_exact/` (same file names as `reference_results/`, plus
-`rS_median_baseline.json`, `rS_original_sr_config.json` and `derived_v3.json`). The sampled definition
+`rS_median_baseline.json`, `rS_original_sr_config.json`, `rS_error_tails.json`, `rS_calibration_checks.json` and `rS_ewc_calibration.json`, produced by the scripts in `src/reliability/supplement/`). The sampled definition
 (`ERROR_DEFINITION = "sampled"`) reproduces `reference_results/`.
+
+The published exact-error caches were rebuilt from the caches of the reference run: for the super-resolved foot meshes the error is the distance to the nearest reference point stored at reconstruction, without the `EXACT_MAX_MM` bound, whereas a fresh run of the pipeline applies the bound to every mesh. The difference concerns 302 vertices in 8 feet (none changes a per-foot mean error by more than 0.001 mm; see `rS_calibration_checks.json`). `scripts/compare_with_reference.py` compares with the folder that matches `ERROR_DEFINITION`. The package hash recorded in `reference_results_exact/` (`c089bc0a79214227`) is that of tag v1.1.0; later commits changed only comments and made the hash independent of line endings.
 
 Medians across cases with the interquartile range, from `reference_results_exact/`:
 

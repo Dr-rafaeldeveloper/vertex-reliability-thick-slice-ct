@@ -251,6 +251,9 @@ def summarize(per, surfaces=("sr", "trilinear"), measures=("eq5", "exact")):
 
 
 def main():
+    if C.ERROR_DEFINITION != "sampled":
+        print("exact_error.py analyses caches produced with the sampled definition of Eq. 5; with ERROR_DEFINITION = %r the caches already hold the exact error (see supplement/error_tails.py)" % (C.ERROR_DEFINITION,))
+        return
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache-foot", default=C.A4_CACHE_FOOT)
     ap.add_argument("--cache-thorax", default=C.A4_CACHE_THORAX)

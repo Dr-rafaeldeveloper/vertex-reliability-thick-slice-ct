@@ -17,5 +17,12 @@ python $P/a4_analyses.py --only 31,32,33,341,342,35,37         > "$L/analyses_fo
 python $P/a4_analyses.py --only 36                             > "$L/analyses_thorax.log" 2>&1  # thoracic results (Section 3.6)
 python $P/supplement/sensitivity/a4c_sensitivity.py --process  > "$L/sens_process.log" 2>&1
 python $P/supplement/sensitivity/a4c_sensitivity.py --analyze  > "$L/sens_analyze.log" 2>&1
-python $P/supplement/exact_error.py                            > "$L/exact_error.log" 2>&1
+python $P/supplement/exact_error.py                            > "$L/exact_error.log" 2>&1   # no-op unless ERROR_DEFINITION = "sampled"
+python $P/supplement/error_tails.py                            > "$L/error_tails.log" 2>&1   # mean, P90, fraction > 2 mm (Section 3.1)
+python $P/supplement/median_constant_baseline.py               > "$L/median_baseline.log" 2>&1
+python $P/supplement/calibration_and_descriptor_checks.py      > "$L/calibration_checks.log" 2>&1
+python $P/supplement/ewc_calibration_check.py                  > "$L/ewc_calibration.log" 2>&1
+# The published exact-error caches were rebuilt from the sampled run (supplement/rebuild_caches_exact.py): for the
+# super-resolved foot meshes they hold the distance to the stored nearest point without the EXACT_MAX_MM bound,
+# whereas a fresh run bounds every mesh (302 vertices in 8 feet; no per-foot mean error changes by more than 0.001 mm).
 python scripts/compare_with_reference.py
