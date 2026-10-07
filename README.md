@@ -171,6 +171,32 @@ each mesh that lie outside the CT volume. Its output for the reference run is `r
 `tests/test_known_truth.py` checks both measurements on synthetic surfaces with a known offset; the sampled
 measurement is expected to fail the identity and small-offset cases and is marked as such.
 
+## Exact-error run
+
+`a4_config.ERROR_DEFINITION = "exact"` (the setting of this branch) makes Eq. 5 the exact point-to-triangle distance to
+the reference surface: the 120,000 sampled points only bound the triangle search (`a4_proximity.nearest_exact_bounded`),
+vertices farther than `EXACT_MAX_MM` from the nearest sampled point keep that bound, and vertices lying more than
+`OUTSIDE_VOLUME_MARGIN_MM` outside the CT volume are removed when a cache is saved. The caches of this run were
+rebuilt from the caches of the reference run by `supplement/rebuild_caches_exact.py` (same surfaces, super-resolution
+and uncertainties; only the error target changed), and every analysis was repeated, including the nested forest
+selection. Results are in `reference_results_exact/` (same file names as `reference_results/`, plus
+`rS_median_baseline.json`, `rS_original_sr_config.json` and `derived_v3.json`). The sampled definition
+(`ERROR_DEFINITION = "sampled"`) reproduces `reference_results/`.
+
+Medians across cases with the interquartile range, from `reference_results_exact/`:
+
+| Quantity | Foot (48 feet) | Thorax (100 test cases) |
+|---|---|---|
+| Surface error, super-resolution (mm) | 0.213 (0.186–0.245) | 0.309 (0.274–0.346) |
+| Surface error, trilinear (mm) | 0.240 (0.226–0.258) | 0.470 (0.443–0.506) |
+| Vertex-level Spearman correlation of the field | 0.548 (0.485–0.586) | 0.489 (0.456–0.514) |
+| Region-level Spearman correlation | 0.611 (0.522–0.728) | 0.824 (0.738–0.871) |
+| AUROC, highest-error decile | 0.850 (0.829–0.872) | 0.834 (0.783–0.854) |
+| Calibration slope | 0.864 (0.665–1.093) | 1.141 (0.909–1.315) |
+
+Registration experiment (foot): remote-target displacement of 0.369 mm when the region is selected by the predicted
+field, against 0.523 mm for random selection.
+
 ## Reproducibility notes
 
 - Seeds are fixed in `a4_config.py`. On the same GPU the super-resolution training is deterministic; the quick check
