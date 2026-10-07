@@ -1,0 +1,92 @@
+{
+ "description": "MAE per foot of the field (LOFO) against a constant equal to the mean (Section 2.9.4) or to the median of the training error; paired differences field minus constant, two-sided Wilcoxon",
+ "n": 48,
+ "mae_model": {
+  "median": 0.3353421444473661,
+  "iqr": [
+   0.2979684425886837,
+   0.3989761334952376
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "mae_constant_mean": {
+  "median": 0.4325090522124541,
+  "iqr": [
+   0.3981028195676327,
+   0.5105084320812744
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "mae_constant_median": {
+  "median": 0.35092758516931444,
+  "iqr": [
+   0.29613664203444723,
+   0.4542468628983109
+  ],
+  "n": 48,
+  "positives": 48,
+  "positive_proportion": 1.0
+ },
+ "model_minus_constant_mean": {
+  "n": 48,
+  "n_excluded_nan": 0,
+  "difference": {
+   "median": -0.09304698771985731,
+   "iqr": [
+    -0.11920641459470882,
+    -0.08062974558209593
+   ],
+   "n": 48,
+   "positives": 0,
+   "positive_proportion": 0.0
+  },
+  "p_wilcoxon": 7.105427357601002e-15,
+  "degenerate": false,
+  "model_lower_in": 48
+ },
+ "model_minus_constant_median": {
+  "n": 48,
+  "n_excluded_nan": 0,
+  "difference": {
+   "median": -0.01983798379583962,
+   "iqr": [
+    -0.04938861890192091,
+    0.009161295673217107
+   ],
+   "n": 48,
+   "positives": 17,
+   "positive_proportion": 0.3541666666666667
+  },
+  "p_wilcoxon": 0.0012336651936166732,
+  "degenerate": false,
+  "model_lower_in": 31
+ },
+ "lofo_memo": "_lofo_rf9_sr_07db31e1085e.npz",
+ "environment": {
+  "data": "2026-10-06T20:33:06",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "c089bc0a79214227",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "dfb3fb21028fa6055324ab0cdf679011bf9b0513d4d86d6a3ffd2f415c65c505",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

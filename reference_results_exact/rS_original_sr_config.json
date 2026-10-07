@@ -1,0 +1,248 @@
+{
+ "description": "adopted SR configuration (SR_LR=0.000585063, SR_ITERS=3046) minus the original configuration (learning rate 1e-3, 2500 iterations (original design)), paired by case; two-sided Wilcoxon on the per-case median error",
+ "foot": {
+  "n": 48,
+  "e_median_sr_mm": {
+   "n": 48,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": 0.007242724299430847,
+    "iqr": [
+     -0.012173958122730255,
+     0.027209367603063583
+    ],
+    "n": 48,
+    "positives": 31,
+    "positive_proportion": 0.6458333333333334
+   },
+   "p_wilcoxon": 0.09375393967392398,
+   "degenerate": false,
+   "current": {
+    "median": 0.2127561755478382,
+    "iqr": [
+     0.18558180332183838,
+     0.24476983211934566
+    ],
+    "n": 48,
+    "positives": 48,
+    "positive_proportion": 1.0
+   },
+   "original": {
+    "median": 0.20877353847026825,
+    "iqr": [
+     0.19030767492949963,
+     0.22454367578029633
+    ],
+    "n": 48,
+    "positives": 48,
+    "positive_proportion": 1.0
+   }
+  },
+  "e_median_tri_mm": {
+   "n": 48,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": 0.0,
+    "iqr": [
+     0.0,
+     0.0
+    ],
+    "n": 48,
+    "positives": 0,
+    "positive_proportion": 0.0
+   },
+   "p_wilcoxon": NaN,
+   "degenerate": true,
+   "current": {
+    "median": 0.23969605192542076,
+    "iqr": [
+     0.22594503313302994,
+     0.25763026624917984
+    ],
+    "n": 48,
+    "positives": 48,
+    "positive_proportion": 1.0
+   },
+   "original": {
+    "median": 0.23969605192542076,
+    "iqr": [
+     0.22594503313302994,
+     0.25763026624917984
+    ],
+    "n": 48,
+    "positives": 48,
+    "positive_proportion": 1.0
+   }
+  },
+  "sr_vs_tri_current": {
+   "n": 48,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.03661390766501427,
+    "iqr": [
+     -0.05819513276219368,
+     0.009026270359754562
+    ],
+    "n": 48,
+    "positives": 13,
+    "positive_proportion": 0.2708333333333333
+   },
+   "p_wilcoxon": 0.00024492515534291215,
+   "degenerate": false,
+   "sr_lower_than_tri_in": 35
+  },
+  "sr_vs_tri_original": {
+   "n": 48,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.03244047239422798,
+    "iqr": [
+     -0.05709260329604149,
+     -0.013191407546401024
+    ],
+    "n": 48,
+    "positives": 7,
+    "positive_proportion": 0.14583333333333334
+   },
+   "p_wilcoxon": 1.0177188869420206e-08,
+   "degenerate": false,
+   "sr_lower_than_tri_in": 41
+  },
+  "error_definition_current": "exact point-to-triangle distance to the reference surface (supplement/rebuild_caches_exact.py)",
+  "error_definition_original": "exact point-to-triangle distance to the reference surface (supplement/rebuild_caches_exact.py)"
+ },
+ "thorax_test": {
+  "n": 100,
+  "e_median_sr_mm": {
+   "n": 100,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.00035265833139419556,
+    "iqr": [
+     -0.005940660834312439,
+     0.005042083561420441
+    ],
+    "n": 100,
+    "positives": 48,
+    "positive_proportion": 0.48
+   },
+   "p_wilcoxon": 0.7779874954111793,
+   "degenerate": false,
+   "current": {
+    "median": 0.3090489059686661,
+    "iqr": [
+     0.2741851881146431,
+     0.34581176191568375
+    ],
+    "n": 100,
+    "positives": 100,
+    "positive_proportion": 1.0
+   },
+   "original": {
+    "median": 0.30750731378793716,
+    "iqr": [
+     0.2690541632473469,
+     0.3439714275300503
+    ],
+    "n": 100,
+    "positives": 100,
+    "positive_proportion": 1.0
+   }
+  },
+  "e_median_tri_mm": {
+   "n": 100,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": 0.0,
+    "iqr": [
+     0.0,
+     0.0
+    ],
+    "n": 100,
+    "positives": 0,
+    "positive_proportion": 0.0
+   },
+   "p_wilcoxon": NaN,
+   "degenerate": true,
+   "current": {
+    "median": 0.4696461856365204,
+    "iqr": [
+     0.4425206519663334,
+     0.5059416219592094
+    ],
+    "n": 100,
+    "positives": 100,
+    "positive_proportion": 1.0
+   },
+   "original": {
+    "median": 0.4696461856365204,
+    "iqr": [
+     0.4425206519663334,
+     0.5059416219592094
+    ],
+    "n": 100,
+    "positives": 100,
+    "positive_proportion": 1.0
+   }
+  },
+  "sr_vs_tri_current": {
+   "n": 100,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.17174190282821655,
+    "iqr": [
+     -0.20463808625936508,
+     -0.10809238255023956
+    ],
+    "n": 100,
+    "positives": 0,
+    "positive_proportion": 0.0
+   },
+   "p_wilcoxon": 3.8965598450959084e-18,
+   "degenerate": false,
+   "sr_lower_than_tri_in": 100
+  },
+  "sr_vs_tri_original": {
+   "n": 100,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.1700303852558136,
+    "iqr": [
+     -0.2073646653443575,
+     -0.10135538876056671
+    ],
+    "n": 100,
+    "positives": 0,
+    "positive_proportion": 0.0
+   },
+   "p_wilcoxon": 3.8965598450959084e-18,
+   "degenerate": false,
+   "sr_lower_than_tri_in": 100
+  },
+  "error_definition_current": "exact point-to-triangle distance to the reference surface (supplement/rebuild_caches_exact.py)",
+  "error_definition_original": "exact point-to-triangle distance to the reference surface (supplement/rebuild_caches_exact.py)"
+ },
+ "environment": {
+  "data": "2026-10-07T12:34:27",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "c089bc0a79214227",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "dfb3fb21028fa6055324ab0cdf679011bf9b0513d4d86d6a3ffd2f415c65c505",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

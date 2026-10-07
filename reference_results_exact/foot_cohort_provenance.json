@@ -1,0 +1,1686 @@
+{
+ "description": "Provenance of the foot cohort (§2.2.1).\n\nThe paper states: \"The available foot examinations were screened before inclusion. Duplicate acquisitions and\ncases that did not provide a complete or technically usable representation of the target anatomy were\nexcluded. After this procedure, 48 distinct feet were retained for analysis.\" and \"The retained CT volumes\nhad an original through-plane slice thickness of 0.5 mm and an in-plane pixel spacing ranging from\napproximately 0.88 to 1.37 mm.\"\n\nThis script reconstructs that screening from `metadata.csv` and from the files themselves, and WRITES the\nevidence:\n 1. duplicates: hash of the voxel-by-voxel CONTENT (md5 of the array + shape), not of the file (the .nii.gz files\n with identical content differ in bytes); crops with the same pixel hash = same acquisition\n (\"Duplicate acquisitions\"); the first identifier (alphabetical order) of each group is kept.\n The md5 of the file is written only as provenance;\n 2. incomplete/unusable representation: (a) entries without a file (read failure of the source NIfTI);\n (b) crops classified in the QC as without the foot (qc_anatomy = WRONG_ANATOMY);\n 3. assertions of §2.2.1 on the retained ones: n = 48; sz = 0.5 mm in all (Eq. 2 depends on it);\n sx = sy in all (validity of x9 = Δxy); pixel within [0.88, 1.37] mm.\nOutputs: output/validation/reliability/results/foot_cohort_provenance.json and\noutput/validation/reliability/foot_list_n48.json.\nAlso checks that the list matches the old list (output/validation/list_n48.json).\nUsage: python src/reliability/a4_cohort.py\n",
+ "metadata_source": "data/foot/metadata.csv",
+ "folder": "data/foot/foot",
+ "screening_universe": {
+  "description": "subjects z001..z066 of the VSDFullBody collection; the download script (foot_ankle_dataset/full/log.txt) listed 63",
+  "n_universe": 66,
+  "missing_from_csv": [
+   "z014",
+   "z052",
+   "z059"
+  ],
+  "absence_reason": "not found in the local files; to be checked with the author (subject list of the download of 2026-07-08)"
+ },
+ "n_entries_csv": 63,
+ "n_with_file": 62,
+ "excluded": {
+  "no_file_or_read_failed": [
+   "z018"
+  ],
+  "pixel_hash_duplicates (excluded -> kept)": {
+   "z051": "z010",
+   "z024": "z013",
+   "z047": "z021",
+   "z053": "z025",
+   "z055": "z026",
+   "z036": "z029",
+   "z035": "z030",
+   "z034": "z031",
+   "z039": "z038"
+  },
+  "wrong_anatomy_qc": [
+   "z011",
+   "z022",
+   "z046",
+   "z050",
+   "z066"
+  ]
+ },
+ "csv_duplicates_match_pixel_hash": true,
+ "pixel_hash_matches_foot_hash_csv": false,
+ "csv_hash_note": "foot_hash in the CSV was computed by another procedure (script of 2026-07); the GROUPINGS match (csv_duplicates_match_pixel_hash)",
+ "n_retained": 48,
+ "retained": [
+  {
+   "id": "z001",
+   "file": "z001_foot.nii.gz",
+   "pixel_hash": "aedff737fa37873574d78c578d6fe76d",
+   "file_md5": "d3b5a254d4580a0ffaa9a2c1e471e9b9",
+   "sx": 0.990234375,
+   "sy": 0.990234375,
+   "sz": 0.5,
+   "dim": [
+    183,
+    189,
+    421
+   ],
+   "origin": [
+    91.1015625,
+    187.154296875,
+    1401.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "75.9"
+  },
+  {
+   "id": "z002",
+   "file": "z002_foot.nii.gz",
+   "pixel_hash": "a7dad16f08be28c24fb1eb97322890e8",
+   "file_md5": "e47118bba6754291ade0a53e4e6aff96",
+   "sx": 0.916015625,
+   "sy": 0.916015625,
+   "sz": 0.5,
+   "dim": [
+    113,
+    249,
+    421
+   ],
+   "origin": [
+    239.080078125,
+    124.578125,
+    0.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "57.0"
+  },
+  {
+   "id": "z003",
+   "file": "z003_foot.nii.gz",
+   "pixel_hash": "826147e8867b62269d502c58241228af",
+   "file_md5": "537bb7d22deb6611d127a9e027db7b35",
+   "sx": 1.171875,
+   "sy": 1.171875,
+   "sz": 0.5,
+   "dim": [
+    200,
+    160,
+    421
+   ],
+   "origin": [
+    119.53125,
+    284.765625,
+    1400.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "O",
+   "age": "65.0"
+  },
+  {
+   "id": "z004",
+   "file": "z004_foot.nii.gz",
+   "pixel_hash": "090de2bec640cdba8fbda60561fea201",
+   "file_md5": "e9793aafe0360a911f03afedb50d8391",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    127,
+    230,
+    421
+   ],
+   "origin": [
+    297.08984375,
+    171.8359375,
+    1407.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "65.0"
+  },
+  {
+   "id": "z005",
+   "file": "z005_foot.nii.gz",
+   "pixel_hash": "3369a197915da67728c02174520dbfce",
+   "file_md5": "ff1377aadf387eacec4daf9e944c13db",
+   "sx": 1.171875,
+   "sy": 1.171875,
+   "sz": 0.5,
+   "dim": [
+    98,
+    198,
+    421
+   ],
+   "origin": [
+    251.953125,
+    244.921875,
+    1485.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "65.0"
+  },
+  {
+   "id": "z006",
+   "file": "z006_foot.nii.gz",
+   "pixel_hash": "b457c36440dc201bce661880240946a7",
+   "file_md5": "2772310729843d31f1ed9cc844255490",
+   "sx": 1.171875,
+   "sy": 1.171875,
+   "sz": 0.5,
+   "dim": [
+    124,
+    163,
+    421
+   ],
+   "origin": [
+    296.484375,
+    257.8125,
+    1507.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "37.0"
+  },
+  {
+   "id": "z007",
+   "file": "z007_foot.nii.gz",
+   "pixel_hash": "3e6ac175e35a171fc88e191d7a88fe69",
+   "file_md5": "46a3c914363be5dd925f22e30cbd5bd0",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    187,
+    192,
+    421
+   ],
+   "origin": [
+    125.25390625,
+    248.4375,
+    1466.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "59.0"
+  },
+  {
+   "id": "z008",
+   "file": "z008_foot.nii.gz",
+   "pixel_hash": "3c8df249eba39b5be8f0d707c4317463",
+   "file_md5": "a20d420a46893929feb33a4431586b5d",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    124,
+    131,
+    421
+   ],
+   "origin": [
+    297.0703125,
+    293.26171875,
+    1336.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "74.9"
+  },
+  {
+   "id": "z009",
+   "file": "z009_foot.nii.gz",
+   "pixel_hash": "8276c16f58467a3641e5889dd98d7436",
+   "file_md5": "d703de1d55b2a5f3492455d920ce0706",
+   "sx": 1.115234375,
+   "sy": 1.115234375,
+   "sz": 0.5,
+   "dim": [
+    180,
+    170,
+    421
+   ],
+   "origin": [
+    243.12109375,
+    254.2734375,
+    1403.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "25.0"
+  },
+  {
+   "id": "z010",
+   "file": "z010_foot.nii.gz",
+   "pixel_hash": "5da344bd1f27c89ff99e8ba03122f9f1",
+   "file_md5": "c5a4cc963f5e38ee4415c3e183b826b4",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    88,
+    149,
+    421
+   ],
+   "origin": [
+    323.73046875,
+    276.7578125,
+    1391.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "68.0"
+  },
+  {
+   "id": "z012",
+   "file": "z012_foot.nii.gz",
+   "pixel_hash": "3bec0a23d64e2acd63ea1e96ea69e7e9",
+   "file_md5": "9fcd698b466d790b75ec9f9a9221e504",
+   "sx": 1.177734375,
+   "sy": 1.177734375,
+   "sz": 0.5,
+   "dim": [
+    103,
+    167,
+    421
+   ],
+   "origin": [
+    276.767578125,
+    243.791015625,
+    1455.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "31.0"
+  },
+  {
+   "id": "z013",
+   "file": "z013_foot.nii.gz",
+   "pixel_hash": "c63b73c55abf48378364e44c3087c3f4",
+   "file_md5": "af334a9b2778f693d6aae669a98744f2",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    129,
+    116,
+    421
+   ],
+   "origin": [
+    317.3828125,
+    261.5234375,
+    1346.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "41.0"
+  },
+  {
+   "id": "z015",
+   "file": "z015_foot.nii.gz",
+   "pixel_hash": "7d106c3263e46db077745fa9a7126d2b",
+   "file_md5": "2ae83e25ce23404617d10096f48bcd9b",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    168,
+    189,
+    421
+   ],
+   "origin": [
+    208.203125,
+    194.23828125,
+    1464.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "21.0"
+  },
+  {
+   "id": "z016",
+   "file": "z016_foot.nii.gz",
+   "pixel_hash": "82e0c2211e236209806a9dbc41ae585f",
+   "file_md5": "52a211f65ed6a977a5baa82b2aaced7f",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    74,
+    165,
+    421
+   ],
+   "origin": [
+    173.92578125,
+    212.01171875,
+    1407.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "33.0"
+  },
+  {
+   "id": "z017",
+   "file": "z017_foot.nii.gz",
+   "pixel_hash": "a4217e2cb8849559d384213561b6f3cb",
+   "file_md5": "13c6c15b36f12eb671c9c977b91631c5",
+   "sx": 1.1796875,
+   "sy": 1.1796875,
+   "sz": 0.5,
+   "dim": [
+    173,
+    231,
+    421
+   ],
+   "origin": [
+    198.1875,
+    166.3359375,
+    1471.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "52.0"
+  },
+  {
+   "id": "z019",
+   "file": "z019_foot.nii.gz",
+   "pixel_hash": "ec431084dc260e4c2070634da1c068f3",
+   "file_md5": "ecd09aa23cdf419a364b41e9946f4e64",
+   "sx": 1.162109375,
+   "sy": 1.162109375,
+   "sz": 0.5,
+   "dim": [
+    150,
+    163,
+    421
+   ],
+   "origin": [
+    94.130859375,
+    238.232421875,
+    1441.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "58.0"
+  },
+  {
+   "id": "z020",
+   "file": "z020_foot.nii.gz",
+   "pixel_hash": "05c74d8b4d533218cc8cfe583c0ea872",
+   "file_md5": "3d27058cace202d9b569f48ba181afa2",
+   "sx": 1.158203125,
+   "sy": 1.158203125,
+   "sz": 0.5,
+   "dim": [
+    123,
+    185,
+    421
+   ],
+   "origin": [
+    320.822265625,
+    211.951171875,
+    1379.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "40.0"
+  },
+  {
+   "id": "z021",
+   "file": "z021_foot.nii.gz",
+   "pixel_hash": "39635f03c4cb7e85bad803c8643e1013",
+   "file_md5": "c1261d2b2ee388363750c4d7d6e36c79",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    109,
+    152,
+    421
+   ],
+   "origin": [
+    195.5078125,
+    290.72265625,
+    1412.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "49.0"
+  },
+  {
+   "id": "z023",
+   "file": "z023_foot.nii.gz",
+   "pixel_hash": "92a3f41fdad3055b67736afe31cadbda",
+   "file_md5": "af23a8193a08f8eec089c8b6a19ce7f7",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    109,
+    179,
+    421
+   ],
+   "origin": [
+    159.4140625,
+    165.625,
+    1350.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "47.0"
+  },
+  {
+   "id": "z025",
+   "file": "z025_foot.nii.gz",
+   "pixel_hash": "992082ddd67d13d1f4883f0ce19cbe57",
+   "file_md5": "b71fd30302b8af80ee45efa6780f3677",
+   "sx": 0.9765625,
+   "sy": 0.9765625,
+   "sz": 0.5,
+   "dim": [
+    227,
+    221,
+    421
+   ],
+   "origin": [
+    121.09375,
+    156.25,
+    1338.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "94.9"
+  },
+  {
+   "id": "z026",
+   "file": "z026_foot.nii.gz",
+   "pixel_hash": "75a870c9c78e0d429937deee31f8a0be",
+   "file_md5": "4e343e3dfca91907087ba0caa284da91",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    153,
+    135,
+    421
+   ],
+   "origin": [
+    92.67578125,
+    253.90625,
+    1393.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "73.0"
+  },
+  {
+   "id": "z027",
+   "file": "z027_foot.nii.gz",
+   "pixel_hash": "34358655db03cacdea25499761f493ae",
+   "file_md5": "09c073ad42b14ff5e1bea55bdd7771d8",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    125,
+    145,
+    421
+   ],
+   "origin": [
+    239.94140625,
+    222.16796875,
+    1393.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "37.0"
+  },
+  {
+   "id": "z028",
+   "file": "z028_foot.nii.gz",
+   "pixel_hash": "0138290bf813a30918bf6dd21ddcbc09",
+   "file_md5": "1e4392c2c31186734620e43364ed87ac",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    135,
+    151,
+    421
+   ],
+   "origin": [
+    180.2734375,
+    241.2109375,
+    1396.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "61.0"
+  },
+  {
+   "id": "z029",
+   "file": "z029_foot.nii.gz",
+   "pixel_hash": "1dae45284527056b585932fa94d59da0",
+   "file_md5": "43b0cc455cf81571e0c0c2c7873abe8c",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    166,
+    137,
+    421
+   ],
+   "origin": [
+    267.87109375,
+    247.55859375,
+    1485.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "62.0"
+  },
+  {
+   "id": "z030",
+   "file": "z030_foot.nii.gz",
+   "pixel_hash": "9964d747953f278b36ab7acc0668dc68",
+   "file_md5": "c1c010f369fb1e7646eeaf49d088d63f",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    186,
+    126,
+    421
+   ],
+   "origin": [
+    206.93359375,
+    284.375,
+    1332.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "30.0"
+  },
+  {
+   "id": "z031",
+   "file": "z031_foot.nii.gz",
+   "pixel_hash": "f73aad1dc4d2aee0260f4ef7117abb10",
+   "file_md5": "ab2f85f6e6a3859c5b26b57e4a863f9a",
+   "sx": 0.9765625,
+   "sy": 0.9765625,
+   "sz": 0.5,
+   "dim": [
+    100,
+    230,
+    421
+   ],
+   "origin": [
+    157.2265625,
+    179.6875,
+    1495.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "45.0"
+  },
+  {
+   "id": "z032",
+   "file": "z032_foot.nii.gz",
+   "pixel_hash": "769856f5d343bb443ddaefdd4ecd293b",
+   "file_md5": "a86c07a747576aded6e548ba0eabea4a",
+   "sx": 1.3671875,
+   "sy": 1.3671875,
+   "sz": 0.5,
+   "dim": [
+    150,
+    93,
+    421
+   ],
+   "origin": [
+    158.59375,
+    434.765625,
+    1426.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "58.0"
+  },
+  {
+   "id": "z033",
+   "file": "z033_foot.nii.gz",
+   "pixel_hash": "16ce15d3bf9827a4a57b3dd57efd0a67",
+   "file_md5": "675351211a9d253c42342b27758a5a60",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    173,
+    132,
+    421
+   ],
+   "origin": [
+    153.61328125,
+    314.84375,
+    1237.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "86.9"
+  },
+  {
+   "id": "z037",
+   "file": "z037_foot.nii.gz",
+   "pixel_hash": "215e8558d510bcedfbcf2ab8f6772d86",
+   "file_md5": "03bd99d309ea13622d0a7e27028124b7",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    125,
+    186,
+    421
+   ],
+   "origin": [
+    265.0,
+    223.59375,
+    1381.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "37.0"
+  },
+  {
+   "id": "z038",
+   "file": "z038_foot.nii.gz",
+   "pixel_hash": "34c4ad6a1f4c41fbbe028828c182c064",
+   "file_md5": "12cfacc272be63f9eb4d305291567991",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    107,
+    179,
+    421
+   ],
+   "origin": [
+    322.4609375,
+    253.90625,
+    1498.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "56.0"
+  },
+  {
+   "id": "z040",
+   "file": "z040_foot.nii.gz",
+   "pixel_hash": "d6cc46380fdf526cc88efd0b68b84539",
+   "file_md5": "8920d6b1a0c7d5c278eec0186682a0ff",
+   "sx": 1.3671875,
+   "sy": 1.3671875,
+   "sz": 0.5,
+   "dim": [
+    107,
+    154,
+    421
+   ],
+   "origin": [
+    445.703125,
+    332.2265625,
+    1462.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "45.0"
+  },
+  {
+   "id": "z041",
+   "file": "z041_foot.nii.gz",
+   "pixel_hash": "625de7fe06a61f460f085c3a677276b6",
+   "file_md5": "03a591bab1f50c09155923e486eff73a",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    143,
+    195,
+    421
+   ],
+   "origin": [
+    61.07421875,
+    160.44921875,
+    1357.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "25.0"
+  },
+  {
+   "id": "z042",
+   "file": "z042_foot.nii.gz",
+   "pixel_hash": "a4849af1604effcd4271005f503d2d86",
+   "file_md5": "af92ede62198f920e98f66208f00d9e4",
+   "sx": 1.009765625,
+   "sy": 1.009765625,
+   "sz": 0.5,
+   "dim": [
+    187,
+    163,
+    421
+   ],
+   "origin": [
+    102.99609375,
+    228.20703125,
+    1316.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "61.0"
+  },
+  {
+   "id": "z043",
+   "file": "z043_foot.nii.gz",
+   "pixel_hash": "3a93cc7fbe19071c16ce89322e6c80f7",
+   "file_md5": "1502fc0620463ad14e43cf551e44103d",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    104,
+    125,
+    421
+   ],
+   "origin": [
+    165.0390625,
+    271.6796875,
+    1283.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "74.9"
+  },
+  {
+   "id": "z044",
+   "file": "z044_foot.nii.gz",
+   "pixel_hash": "62fcecd0c2ef320cb125403358423c56",
+   "file_md5": "5e8dc253b26b309d48671d03ddaa5b4d",
+   "sx": 0.990234375,
+   "sy": 0.990234375,
+   "sz": 0.5,
+   "dim": [
+    187,
+    173,
+    421
+   ],
+   "origin": [
+    253.5,
+    222.802734375,
+    1321.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "45.0"
+  },
+  {
+   "id": "z045",
+   "file": "z045_foot.nii.gz",
+   "pixel_hash": "0a304681a31d561cf1d872f44b2de389",
+   "file_md5": "4dfcf14ef4fbb35bdb22b7d5f1391a40",
+   "sx": 1.001953125,
+   "sy": 1.001953125,
+   "sz": 0.5,
+   "dim": [
+    126,
+    138,
+    421
+   ],
+   "origin": [
+    48.09375,
+    200.390625,
+    1348.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "45.0"
+  },
+  {
+   "id": "z048",
+   "file": "z048_foot.nii.gz",
+   "pixel_hash": "61edce5a1e874c3981c78321086660b3",
+   "file_md5": "3584c2cf1ceaf7171ffe515a575100ad",
+   "sx": 0.916015625,
+   "sy": 0.916015625,
+   "sz": 0.5,
+   "dim": [
+    113,
+    249,
+    421
+   ],
+   "origin": [
+    239.080078125,
+    116.333984375,
+    1387.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "57.0"
+  },
+  {
+   "id": "z049",
+   "file": "z049_foot.nii.gz",
+   "pixel_hash": "7329614029ec363a94ccaa491ce5bc55",
+   "file_md5": "d1de4134275c53e83fce851af88bcc2c",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    124,
+    164,
+    421
+   ],
+   "origin": [
+    431.640625,
+    232.32421875,
+    1439.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "34.0"
+  },
+  {
+   "id": "z054",
+   "file": "z054_foot.nii.gz",
+   "pixel_hash": "b719ea4a7ddd3ad1c9583c626e52bd10",
+   "file_md5": "3710b9e55715d9c4d03e1cc10da5c7f1",
+   "sx": 0.875,
+   "sy": 0.875,
+   "sz": 0.5,
+   "dim": [
+    294,
+    273,
+    421
+   ],
+   "origin": [
+    80.5,
+    115.5,
+    1334.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "94.9"
+  },
+  {
+   "id": "z056",
+   "file": "z056_foot.nii.gz",
+   "pixel_hash": "6642c5c92072118d67b06429732e68ba",
+   "file_md5": "faa14fe090e8810c93aea266e41db95f",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    120,
+    185,
+    421
+   ],
+   "origin": [
+    368.1640625,
+    217.08984375,
+    1523.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "26.0"
+  },
+  {
+   "id": "z057",
+   "file": "z057_foot.nii.gz",
+   "pixel_hash": "016d0bb9083cb8312026131082ec3fb0",
+   "file_md5": "9702b381756c1ec718b670deb5ffbbec",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    194,
+    167,
+    421
+   ],
+   "origin": [
+    256.4453125,
+    308.49609375,
+    1398.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "REVIEW(internal_air)",
+   "sex": "M",
+   "age": "74.9"
+  },
+  {
+   "id": "z058",
+   "file": "z058_foot.nii.gz",
+   "pixel_hash": "de1ef6096dcceb6ee7f5ff44126d5e46",
+   "file_md5": "165e3e8da7cad56c40088d2aa2371bd3",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    92,
+    176,
+    421
+   ],
+   "origin": [
+    206.93359375,
+    233.59375,
+    1358.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "36.0"
+  },
+  {
+   "id": "z060",
+   "file": "z060_foot.nii.gz",
+   "pixel_hash": "d49eabaccde74955a1c768abf1c8dda0",
+   "file_md5": "c9a63628ee4c30915e54dc71bf6aad16",
+   "sx": 1.03515625,
+   "sy": 1.03515625,
+   "sz": 0.5,
+   "dim": [
+    123,
+    211,
+    421
+   ],
+   "origin": [
+    274.31640625,
+    181.15234375,
+    1358.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "65.0"
+  },
+  {
+   "id": "z061",
+   "file": "z061_foot.nii.gz",
+   "pixel_hash": "21e690a9dba3e388ebd30a3d1574b5e5",
+   "file_md5": "f53e7246d76e162b2cdc049bf6718c9d",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    121,
+    140,
+    421
+   ],
+   "origin": [
+    133.30078125,
+    248.828125,
+    1426.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "39.0"
+  },
+  {
+   "id": "z062",
+   "file": "z062_foot.nii.gz",
+   "pixel_hash": "399487010ca723b790041919c8fe5fa8",
+   "file_md5": "7ba8c9cb1d5cebdf54102596fb77a1ad",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    145,
+    144,
+    421
+   ],
+   "origin": [
+    130.76171875,
+    281.8359375,
+    1397.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "43.0"
+  },
+  {
+   "id": "z063",
+   "file": "z063_foot.nii.gz",
+   "pixel_hash": "c0327bbc76b49717fa034f5adcc5c696",
+   "file_md5": "7c01f5168769d65b5fe3b7278daa2050",
+   "sx": 1.109375,
+   "sy": 1.109375,
+   "sz": 0.5,
+   "dim": [
+    127,
+    169,
+    421
+   ],
+   "origin": [
+    114.265625,
+    241.84375,
+    1389.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "F",
+   "age": "72.0"
+  },
+  {
+   "id": "z064",
+   "file": "z064_foot.nii.gz",
+   "pixel_hash": "5a5e8534e32cc456d76a1810355d2ee0",
+   "file_md5": "7666973b7f92e39284d5877d72e82b49",
+   "sx": 1.068359375,
+   "sy": 1.068359375,
+   "sz": 0.5,
+   "dim": [
+    148,
+    215,
+    421
+   ],
+   "origin": [
+    284.18359375,
+    193.373046875,
+    1399.5
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "69.0"
+  },
+  {
+   "id": "z065",
+   "file": "z065_foot.nii.gz",
+   "pixel_hash": "e03a4b39d7461c005f6cc245ece02cbb",
+   "file_md5": "4fa03e6cdc92aa3684469510c7c01623",
+   "sx": 1.26953125,
+   "sy": 1.26953125,
+   "sz": 0.5,
+   "dim": [
+    115,
+    176,
+    421
+   ],
+   "origin": [
+    264.0625,
+    256.4453125,
+    1309.0
+   ],
+   "direction": [
+    1.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    -0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "qc_anatomy_csv": "OK",
+   "sex": "M",
+   "age": "84.9"
+  }
+ ],
+ "near_duplicates_checked": [
+  {
+   "pair": [
+    "z002",
+    "z048"
+   ],
+   "r": {
+    "direct": 0.41104344012642596,
+    "mirror_x": 0.40846615104931183,
+    "mirror_y": 0.29182394782454585
+   },
+   "same_acquisition": false
+  }
+ ],
+ "demographics_warning": "the exact pixel duplicates have diverging sex/age in the CSV (e.g. z013 vs z024); the sex/age fields are NOT reliable to characterize the cohort",
+ "assertions_2_2_1": {
+  "n_equals_48": true,
+  "sz_0_5_mm_in_all": true,
+  "sx_equals_sy_in_all": true,
+  "pixel_min_mm": 0.875,
+  "pixel_max_mm": 1.3671875,
+  "pixel_range_paper_mm": [
+   0.88,
+   1.37
+  ]
+ },
+ "retained_with_non_excluding_qc_flag": [
+  {
+   "id": "z057",
+   "qc_anatomy_csv": "REVIEW(internal_air)"
+  }
+ ],
+ "list_matches_old_n48_list": true,
+ "environment": {
+  "data": "2026-09-24T07:26:36",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "3550eadf934c63ff",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "e52e11eedd9687a0ae2731e7ab84f19a72f3a6cba51403bc0e509bd5e507534b",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

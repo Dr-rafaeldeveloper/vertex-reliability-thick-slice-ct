@@ -1,0 +1,628 @@
+{
+ "section": "3.2 Vertex- and Region-Level Reliability Prediction (Eq. 35–39)",
+ "n_cases": 48,
+ "sr": {
+  "rho_vertex": {
+   "median": 0.5478739438844107,
+   "iqr": [
+    0.4853237468359547,
+    0.5859652044856668
+   ],
+   "n": 48,
+   "positives": 48,
+   "positive_proportion": 1.0
+  },
+  "rho_region": {
+   "median": 0.6111538461538462,
+   "iqr": [
+    0.5217307692307692,
+    0.7278846153846154
+   ],
+   "n": 48,
+   "positives": 48,
+   "positive_proportion": 1.0
+  },
+  "pooled_region_rho": 0.6371131993841662,
+  "n_pooled_regions": 1200
+ },
+ "trilinear": {
+  "rho_vertex": {
+   "median": 0.48388194042012705,
+   "iqr": [
+    0.43913501772058455,
+    0.5471393852322408
+   ],
+   "n": 48,
+   "positives": 48,
+   "positive_proportion": 1.0
+  },
+  "rho_region": {
+   "median": 0.49423076923076925,
+   "iqr": [
+    0.4144230769230769,
+    0.5957692307692308
+   ],
+   "n": 48,
+   "positives": 48,
+   "positive_proportion": 1.0
+  },
+  "pooled_region_rho": 0.44088488950339544,
+  "n_pooled_regions": 1200
+ },
+ "sr_vs_trilinear_rho_vertex": {
+  "n": 48,
+  "n_excluded_nan": 0,
+  "difference": {
+   "median": 0.04930342217918132,
+   "iqr": [
+    0.008798243744756296,
+    0.0849437960940056
+   ],
+   "n": 48,
+   "positives": 41,
+   "positive_proportion": 0.8541666666666666
+  },
+  "p_wilcoxon": 5.769038580183405e-10,
+  "degenerate": false
+ },
+ "per_case_sr": {
+  "z001_foot.nii.gz": {
+   "rho_vertex": 0.5703083282557525,
+   "rho_region": 0.6246153846153846,
+   "n_vertices": 29997
+  },
+  "z002_foot.nii.gz": {
+   "rho_vertex": 0.4614348495012368,
+   "rho_region": 0.6346153846153846,
+   "n_vertices": 29894
+  },
+  "z003_foot.nii.gz": {
+   "rho_vertex": 0.47657726675822404,
+   "rho_region": 0.7,
+   "n_vertices": 30026
+  },
+  "z004_foot.nii.gz": {
+   "rho_vertex": 0.5307861530410874,
+   "rho_region": 0.5776923076923076,
+   "n_vertices": 30045
+  },
+  "z005_foot.nii.gz": {
+   "rho_vertex": 0.5480524391923424,
+   "rho_region": 0.19,
+   "n_vertices": 29908
+  },
+  "z006_foot.nii.gz": {
+   "rho_vertex": 0.583958149476682,
+   "rho_region": 0.6115384615384616,
+   "n_vertices": 30003
+  },
+  "z007_foot.nii.gz": {
+   "rho_vertex": 0.4871511083056469,
+   "rho_region": 0.7699999999999999,
+   "n_vertices": 30128
+  },
+  "z008_foot.nii.gz": {
+   "rho_vertex": 0.5476954485764789,
+   "rho_region": 0.3038461538461538,
+   "n_vertices": 29940
+  },
+  "z009_foot.nii.gz": {
+   "rho_vertex": 0.5061414715942343,
+   "rho_region": 0.2530769230769231,
+   "n_vertices": 30160
+  },
+  "z010_foot.nii.gz": {
+   "rho_vertex": 0.592045657000127,
+   "rho_region": 0.7076923076923076,
+   "n_vertices": 29903
+  },
+  "z012_foot.nii.gz": {
+   "rho_vertex": 0.5858386948973124,
+   "rho_region": 0.5838461538461539,
+   "n_vertices": 30198
+  },
+  "z013_foot.nii.gz": {
+   "rho_vertex": 0.5093573280501881,
+   "rho_region": 0.7453846153846154,
+   "n_vertices": 30053
+  },
+  "z015_foot.nii.gz": {
+   "rho_vertex": 0.58634473325073,
+   "rho_region": 0.7184615384615384,
+   "n_vertices": 29937
+  },
+  "z016_foot.nii.gz": {
+   "rho_vertex": 0.6318002008279677,
+   "rho_region": 0.6961538461538461,
+   "n_vertices": 29968
+  },
+  "z017_foot.nii.gz": {
+   "rho_vertex": 0.628246215737418,
+   "rho_region": 0.5638461538461538,
+   "n_vertices": 30071
+  },
+  "z019_foot.nii.gz": {
+   "rho_vertex": 0.48132775193604566,
+   "rho_region": 0.42846153846153845,
+   "n_vertices": 30012
+  },
+  "z020_foot.nii.gz": {
+   "rho_vertex": 0.6210762702842555,
+   "rho_region": 0.5846153846153846,
+   "n_vertices": 30075
+  },
+  "z021_foot.nii.gz": {
+   "rho_vertex": 0.5402386605660916,
+   "rho_region": 0.40461538461538454,
+   "n_vertices": 30039
+  },
+  "z023_foot.nii.gz": {
+   "rho_vertex": 0.5216688499144779,
+   "rho_region": 0.5876923076923077,
+   "n_vertices": 30080
+  },
+  "z025_foot.nii.gz": {
+   "rho_vertex": 0.41027131309111314,
+   "rho_region": 0.5253846153846153,
+   "n_vertices": 29794
+  },
+  "z026_foot.nii.gz": {
+   "rho_vertex": 0.5465382617260433,
+   "rho_region": 0.5961538461538461,
+   "n_vertices": 30037
+  },
+  "z027_foot.nii.gz": {
+   "rho_vertex": 0.48343493372989366,
+   "rho_region": 0.37538461538461537,
+   "n_vertices": 29960
+  },
+  "z028_foot.nii.gz": {
+   "rho_vertex": 0.5687235286474034,
+   "rho_region": 0.8607692307692307,
+   "n_vertices": 29960
+  },
+  "z029_foot.nii.gz": {
+   "rho_vertex": 0.5450608314905624,
+   "rho_region": 0.52,
+   "n_vertices": 30178
+  },
+  "z030_foot.nii.gz": {
+   "rho_vertex": 0.6628857475235083,
+   "rho_region": 0.816923076923077,
+   "n_vertices": 30001
+  },
+  "z031_foot.nii.gz": {
+   "rho_vertex": 0.647418099667744,
+   "rho_region": 0.673076923076923,
+   "n_vertices": 30166
+  },
+  "z032_foot.nii.gz": {
+   "rho_vertex": 0.5538988948488022,
+   "rho_region": 0.48538461538461536,
+   "n_vertices": 30264
+  },
+  "z033_foot.nii.gz": {
+   "rho_vertex": 0.5310310360276222,
+   "rho_region": 0.6107692307692307,
+   "n_vertices": 29887
+  },
+  "z037_foot.nii.gz": {
+   "rho_vertex": 0.5613346692940844,
+   "rho_region": 0.7884615384615384,
+   "n_vertices": 30003
+  },
+  "z038_foot.nii.gz": {
+   "rho_vertex": 0.4205292793375977,
+   "rho_region": 0.24461538461538462,
+   "n_vertices": 29592
+  },
+  "z040_foot.nii.gz": {
+   "rho_vertex": 0.6006937837747292,
+   "rho_region": 0.7353846153846154,
+   "n_vertices": 30050
+  },
+  "z041_foot.nii.gz": {
+   "rho_vertex": 0.5558973100568614,
+   "rho_region": 0.5253846153846153,
+   "n_vertices": 30074
+  },
+  "z042_foot.nii.gz": {
+   "rho_vertex": 0.5481302699368527,
+   "rho_region": 0.7784615384615384,
+   "n_vertices": 29988
+  },
+  "z043_foot.nii.gz": {
+   "rho_vertex": 0.45182453891946545,
+   "rho_region": 0.7500000000000001,
+   "n_vertices": 29842
+  },
+  "z044_foot.nii.gz": {
+   "rho_vertex": 0.4859533512046417,
+   "rho_region": 0.7361538461538463,
+   "n_vertices": 29937
+  },
+  "z045_foot.nii.gz": {
+   "rho_vertex": 0.5600304884719243,
+   "rho_region": 0.7492307692307693,
+   "n_vertices": 30029
+  },
+  "z048_foot.nii.gz": {
+   "rho_vertex": 0.46375914011374453,
+   "rho_region": 0.6276923076923077,
+   "n_vertices": 29818
+  },
+  "z049_foot.nii.gz": {
+   "rho_vertex": 0.580258765309858,
+   "rho_region": 0.5376923076923077,
+   "n_vertices": 30018
+  },
+  "z054_foot.nii.gz": {
+   "rho_vertex": 0.4424393786125097,
+   "rho_region": 0.6223076923076922,
+   "n_vertices": 29798
+  },
+  "z056_foot.nii.gz": {
+   "rho_vertex": 0.6624334195307578,
+   "rho_region": 0.49615384615384617,
+   "n_vertices": 30046
+  },
+  "z057_foot.nii.gz": {
+   "rho_vertex": 0.4777651224449182,
+   "rho_region": 0.7653846153846153,
+   "n_vertices": 29854
+  },
+  "z058_foot.nii.gz": {
+   "rho_vertex": 0.603831158190153,
+   "rho_region": 0.7438461538461538,
+   "n_vertices": 30117
+  },
+  "z060_foot.nii.gz": {
+   "rho_vertex": 0.5924891970334634,
+   "rho_region": 0.6723076923076923,
+   "n_vertices": 30094
+  },
+  "z061_foot.nii.gz": {
+   "rho_vertex": 0.5621325211428493,
+   "rho_region": 0.6061538461538462,
+   "n_vertices": 29916
+  },
+  "z062_foot.nii.gz": {
+   "rho_vertex": 0.6035494625577933,
+   "rho_region": 0.4015384615384615,
+   "n_vertices": 30010
+  },
+  "z063_foot.nii.gz": {
+   "rho_vertex": 0.5428938568534234,
+   "rho_region": 0.7253846153846153,
+   "n_vertices": 30052
+  },
+  "z064_foot.nii.gz": {
+   "rho_vertex": 0.4799154415732779,
+   "rho_region": 0.5223076923076923,
+   "n_vertices": 29972
+  },
+  "z065_foot.nii.gz": {
+   "rho_vertex": 0.44568828903053004,
+   "rho_region": 0.5176923076923077,
+   "n_vertices": 30161
+  }
+ },
+ "per_case_trilinear": {
+  "z001_foot.nii.gz": {
+   "rho_vertex": 0.5057174579498727,
+   "rho_region": 0.22615384615384618,
+   "n_vertices": 30030
+  },
+  "z002_foot.nii.gz": {
+   "rho_vertex": 0.40312856603917274,
+   "rho_region": 0.4815384615384616,
+   "n_vertices": 29912
+  },
+  "z003_foot.nii.gz": {
+   "rho_vertex": 0.39457699622537656,
+   "rho_region": 0.6153846153846153,
+   "n_vertices": 30086
+  },
+  "z004_foot.nii.gz": {
+   "rho_vertex": 0.521937457977646,
+   "rho_region": 0.5892307692307692,
+   "n_vertices": 30007
+  },
+  "z005_foot.nii.gz": {
+   "rho_vertex": 0.441273655258197,
+   "rho_region": 0.43076923076923074,
+   "n_vertices": 30005
+  },
+  "z006_foot.nii.gz": {
+   "rho_vertex": 0.45849646666686444,
+   "rho_region": 0.3984615384615384,
+   "n_vertices": 30049
+  },
+  "z007_foot.nii.gz": {
+   "rho_vertex": 0.3880649605999186,
+   "rho_region": 0.6169230769230769,
+   "n_vertices": 30095
+  },
+  "z008_foot.nii.gz": {
+   "rho_vertex": 0.48065241843386186,
+   "rho_region": 0.6976923076923077,
+   "n_vertices": 30009
+  },
+  "z009_foot.nii.gz": {
+   "rho_vertex": 0.5108133937670047,
+   "rho_region": 0.4907692307692308,
+   "n_vertices": 30162
+  },
+  "z010_foot.nii.gz": {
+   "rho_vertex": 0.4419670976637937,
+   "rho_region": 0.7769230769230768,
+   "n_vertices": 29972
+  },
+  "z012_foot.nii.gz": {
+   "rho_vertex": 0.6134635112572429,
+   "rho_region": 0.7969230769230768,
+   "n_vertices": 30199
+  },
+  "z013_foot.nii.gz": {
+   "rho_vertex": 0.43292067885450136,
+   "rho_region": 0.4592307692307693,
+   "n_vertices": 30110
+  },
+  "z015_foot.nii.gz": {
+   "rho_vertex": 0.4650662051741777,
+   "rho_region": 0.3215384615384615,
+   "n_vertices": 30011
+  },
+  "z016_foot.nii.gz": {
+   "rho_vertex": 0.49376604085948966,
+   "rho_region": 0.4146153846153846,
+   "n_vertices": 30040
+  },
+  "z017_foot.nii.gz": {
+   "rho_vertex": 0.5785643930647697,
+   "rho_region": 0.6107692307692307,
+   "n_vertices": 30064
+  },
+  "z019_foot.nii.gz": {
+   "rho_vertex": 0.47926537959560106,
+   "rho_region": 0.26692307692307693,
+   "n_vertices": 30032
+  },
+  "z020_foot.nii.gz": {
+   "rho_vertex": 0.5726203631797266,
+   "rho_region": 0.5615384615384615,
+   "n_vertices": 30054
+  },
+  "z021_foot.nii.gz": {
+   "rho_vertex": 0.4869532811470303,
+   "rho_region": 0.43999999999999995,
+   "n_vertices": 30055
+  },
+  "z023_foot.nii.gz": {
+   "rho_vertex": 0.5611737719845845,
+   "rho_region": 0.4138461538461538,
+   "n_vertices": 30068
+  },
+  "z025_foot.nii.gz": {
+   "rho_vertex": 0.42470139661092543,
+   "rho_region": 0.8492307692307692,
+   "n_vertices": 29931
+  },
+  "z026_foot.nii.gz": {
+   "rho_vertex": 0.546757056571289,
+   "rho_region": 0.5146153846153847,
+   "n_vertices": 30029
+  },
+  "z027_foot.nii.gz": {
+   "rho_vertex": 0.4580881854645995,
+   "rho_region": 0.16461538461538464,
+   "n_vertices": 30001
+  },
+  "z028_foot.nii.gz": {
+   "rho_vertex": 0.4749491558699234,
+   "rho_region": 0.45076923076923076,
+   "n_vertices": 30010
+  },
+  "z029_foot.nii.gz": {
+   "rho_vertex": 0.4399176536672404,
+   "rho_region": 0.4976923076923077,
+   "n_vertices": 30244
+  },
+  "z030_foot.nii.gz": {
+   "rho_vertex": 0.5149373605776508,
+   "rho_region": 0.15000000000000002,
+   "n_vertices": 30038
+  },
+  "z031_foot.nii.gz": {
+   "rho_vertex": 0.6013068616188315,
+   "rho_region": 0.5561538461538461,
+   "n_vertices": 30135
+  },
+  "z032_foot.nii.gz": {
+   "rho_vertex": 0.5482863712150962,
+   "rho_region": 0.42692307692307696,
+   "n_vertices": 30272
+  },
+  "z033_foot.nii.gz": {
+   "rho_vertex": 0.41457345597931283,
+   "rho_region": 0.2892307692307692,
+   "n_vertices": 30002
+  },
+  "z037_foot.nii.gz": {
+   "rho_vertex": 0.4840623209807744,
+   "rho_region": 0.5230769230769231,
+   "n_vertices": 30038
+  },
+  "z038_foot.nii.gz": {
+   "rho_vertex": 0.35816139315022355,
+   "rho_region": 0.576923076923077,
+   "n_vertices": 29873
+  },
+  "z040_foot.nii.gz": {
+   "rho_vertex": 0.5527093751671447,
+   "rho_region": 0.6438461538461538,
+   "n_vertices": 30042
+  },
+  "z041_foot.nii.gz": {
+   "rho_vertex": 0.5561394724365356,
+   "rho_region": 0.42923076923076925,
+   "n_vertices": 30070
+  },
+  "z042_foot.nii.gz": {
+   "rho_vertex": 0.525896960943922,
+   "rho_region": 0.25230769230769234,
+   "n_vertices": 30012
+  },
+  "z043_foot.nii.gz": {
+   "rho_vertex": 0.35448375622925027,
+   "rho_region": 0.48384615384615387,
+   "n_vertices": 30025
+  },
+  "z044_foot.nii.gz": {
+   "rho_vertex": 0.4768503382374186,
+   "rho_region": 0.7353846153846154,
+   "n_vertices": 29972
+  },
+  "z045_foot.nii.gz": {
+   "rho_vertex": 0.5516433572780999,
+   "rho_region": 0.8961538461538462,
+   "n_vertices": 30037
+  },
+  "z048_foot.nii.gz": {
+   "rho_vertex": 0.4232833832092176,
+   "rho_region": 0.5907692307692308,
+   "n_vertices": 29889
+  },
+  "z049_foot.nii.gz": {
+   "rho_vertex": 0.5783446014610417,
+   "rho_region": 0.5646153846153846,
+   "n_vertices": 30028
+  },
+  "z054_foot.nii.gz": {
+   "rho_vertex": 0.3797597282422615,
+   "rho_region": 0.40307692307692305,
+   "n_vertices": 29956
+  },
+  "z056_foot.nii.gz": {
+   "rho_vertex": 0.6135083978450435,
+   "rho_region": 0.4907692307692308,
+   "n_vertices": 30037
+  },
+  "z057_foot.nii.gz": {
+   "rho_vertex": 0.43983289054683633,
+   "rho_region": 0.7469230769230769,
+   "n_vertices": 29889
+  },
+  "z058_foot.nii.gz": {
+   "rho_vertex": 0.41843003217978286,
+   "rho_region": 0.7284615384615384,
+   "n_vertices": 30015
+  },
+  "z060_foot.nii.gz": {
+   "rho_vertex": 0.539142847131398,
+   "rho_region": 0.5499999999999999,
+   "n_vertices": 30090
+  },
+  "z061_foot.nii.gz": {
+   "rho_vertex": 0.48511712046418004,
+   "rho_region": 0.5061538461538462,
+   "n_vertices": 30004
+  },
+  "z062_foot.nii.gz": {
+   "rho_vertex": 0.5550152478116746,
+   "rho_region": 0.48923076923076925,
+   "n_vertices": 30016
+  },
+  "z063_foot.nii.gz": {
+   "rho_vertex": 0.4983589584011961,
+   "rho_region": 0.5107692307692308,
+   "n_vertices": 30051
+  },
+  "z064_foot.nii.gz": {
+   "rho_vertex": 0.4837015598594797,
+   "rho_region": 0.39076923076923076,
+   "n_vertices": 30016
+  },
+  "z065_foot.nii.gz": {
+   "rho_vertex": 0.43704139924182916,
+   "rho_region": 0.363076923076923,
+   "n_vertices": 30068
+  }
+ },
+ "_traceability": {
+  "caches": [
+   "z001_foot.nii.gz",
+   "z002_foot.nii.gz",
+   "z003_foot.nii.gz",
+   "z004_foot.nii.gz",
+   "z005_foot.nii.gz",
+   "z006_foot.nii.gz",
+   "z007_foot.nii.gz",
+   "z008_foot.nii.gz",
+   "z009_foot.nii.gz",
+   "z010_foot.nii.gz",
+   "z012_foot.nii.gz",
+   "z013_foot.nii.gz",
+   "z015_foot.nii.gz",
+   "z016_foot.nii.gz",
+   "z017_foot.nii.gz",
+   "z019_foot.nii.gz",
+   "z020_foot.nii.gz",
+   "z021_foot.nii.gz",
+   "z023_foot.nii.gz",
+   "z025_foot.nii.gz",
+   "z026_foot.nii.gz",
+   "z027_foot.nii.gz",
+   "z028_foot.nii.gz",
+   "z029_foot.nii.gz",
+   "z030_foot.nii.gz",
+   "z031_foot.nii.gz",
+   "z032_foot.nii.gz",
+   "z033_foot.nii.gz",
+   "z037_foot.nii.gz",
+   "z038_foot.nii.gz",
+   "z040_foot.nii.gz",
+   "z041_foot.nii.gz",
+   "z042_foot.nii.gz",
+   "z043_foot.nii.gz",
+   "z044_foot.nii.gz",
+   "z045_foot.nii.gz",
+   "z048_foot.nii.gz",
+   "z049_foot.nii.gz",
+   "z054_foot.nii.gz",
+   "z056_foot.nii.gz",
+   "z057_foot.nii.gz",
+   "z058_foot.nii.gz",
+   "z060_foot.nii.gz",
+   "z061_foot.nii.gz",
+   "z062_foot.nii.gz",
+   "z063_foot.nii.gz",
+   "z064_foot.nii.gz",
+   "z065_foot.nii.gz"
+  ],
+  "environment": {
+   "data": "2026-10-05T10:34:25",
+   "python": "3.13.9",
+   "platform": "Windows-11-10.0.26200-SP0",
+   "numpy": "2.4.2",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.0",
+   "skimage": "0.26.0",
+   "trimesh": "4.12.2",
+   "SimpleITK": "2.5.3",
+   "code_hash_reliability": "c089bc0a79214227",
+   "sr_lr": 0.0005850631055477961,
+   "sr_iters": 3046,
+   "ds_prior_lr": 0.001,
+   "sr_origin": {
+    "file": "results/sr_selection_hebo.json",
+    "sha256": "dfb3fb21028fa6055324ab0cdf679011bf9b0513d4d86d6a3ffd2f415c65c505",
+    "adopted_index": 18,
+    "adopted_equals_a4_config": true
+   },
+   "fast_simplification": "0.1.13",
+   "optuna": "5.0.0"
+  },
+  "protocol": "rf9; 4000 vertices per training case; evaluation on the full surface; median and IQR; two-sided Wilcoxon; BH per family"
+ }
+}
