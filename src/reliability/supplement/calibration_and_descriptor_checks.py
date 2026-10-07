@@ -61,8 +61,15 @@ def cohort(cache_dir: str, label_sr: str, label_tri: str) -> dict:
     ids = sorted(sl)
     mp = np.array([mean_p[h] for h in ids])
     me = np.array([mean_e[h] for h in ids])
+    # the field against the shape disagreement alone (column 5 of F): rank agreement per case
+    rho_field_dshape = {}
+    for f in sorted(glob.glob(os.path.join(cache_dir, "*.npz"))):
+        h = os.path.basename(f)[:-4]
+        F = np.load(f, allow_pickle=False)["F"].astype(float)
+        rho_field_dshape[h] = float(spearmanr(pred[h], F[:, 5])[0])
     return {
         "n": len(ids),
+        "spearman_field_vs_d_shape": E.summary(list(rho_field_dshape.values())),
         "slope_all_vertices": E.summary(list(sl.values())),
         "slope_without_vertices_beyond_exact_max": E.summary(list(sl_near.values())),
         "cases_with_slope_above_one": {"all_vertices": int(sum(v > 1 for v in sl.values())), "without_beyond_exact_max": int(sum(v > 1 for v in sl_near.values()))},
@@ -80,8 +87,22 @@ def cohort(cache_dir: str, label_sr: str, label_tri: str) -> dict:
     }
 
 
+def mae_vs_constant(result_file: str, per_case_key: str) -> dict:
+    """Paired test of the MAE of the field against the MAE of the constant predictor (per case, from a result file)."""
+    j = json.load(open(os.path.join(C.A4_RESULTS, result_file), encoding="utf-8"))[per_case_key]
+    model = {h: v["mae_mm"] for h, v in j.items()}
+    const = {h: v["constant_mae_mm"] for h, v in j.items()}
+    out = E.paired_comparison(model, const)
+    out["model_lower_in"] = int(sum(model[h] < const[h] for h in model))
+    return out
+
+
 def main():
     out = {
+        "mae_field_minus_constant": {
+            "foot": mae_vs_constant("r33_localization_calibration.json", "per_case_sr"),
+            "thorax_test": mae_vs_constant("r36_thorax.json", "per_case_sr"),
+        },
         "description": "calibration slope with/without the vertices kept at the EXACT_MAX_MM bound; between-case compression of the prediction; descriptor-error association per surface",
         "exact_max_mm": C.EXACT_MAX_MM,
         "foot": cohort(C.A4_CACHE_FOOT, "rf9_sr", "rf9_tri"),

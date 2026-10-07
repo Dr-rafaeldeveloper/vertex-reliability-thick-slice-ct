@@ -1,8 +1,54 @@
 {
+ "mae_field_minus_constant": {
+  "foot": {
+   "n": 48,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.09304698771985731,
+    "iqr": [
+     -0.11920641459470882,
+     -0.08062974558209593
+    ],
+    "n": 48,
+    "positives": 0,
+    "positive_proportion": 0.0
+   },
+   "p_wilcoxon": 7.105427357601002e-15,
+   "degenerate": false,
+   "model_lower_in": 48
+  },
+  "thorax_test": {
+   "n": 100,
+   "n_excluded_nan": 0,
+   "difference": {
+    "median": -0.09193851649524284,
+    "iqr": [
+     -0.1065322546491824,
+     -0.05884182245273216
+    ],
+    "n": 100,
+    "positives": 4,
+    "positive_proportion": 0.04
+   },
+   "p_wilcoxon": 1.273307953842098e-16,
+   "degenerate": false,
+   "model_lower_in": 96
+  }
+ },
  "description": "calibration slope with/without the vertices kept at the EXACT_MAX_MM bound; between-case compression of the prediction; descriptor-error association per surface",
  "exact_max_mm": 20.0,
  "foot": {
   "n": 48,
+  "spearman_field_vs_d_shape": {
+   "median": 0.8520923142600094,
+   "iqr": [
+    0.8294035233831811,
+    0.8718975618480682
+   ],
+   "n": 48,
+   "positives": 48,
+   "positive_proportion": 1.0
+  },
   "slope_all_vertices": {
    "median": 0.8641110942102805,
    "iqr": [
@@ -276,6 +322,16 @@
  },
  "thorax_test": {
   "n": 100,
+  "spearman_field_vs_d_shape": {
+   "median": 0.6774309375162941,
+   "iqr": [
+    0.6512099282318429,
+    0.7012584630302303
+   ],
+   "n": 100,
+   "positives": 100,
+   "positive_proportion": 1.0
+  },
   "slope_all_vertices": {
    "median": 1.1406386091593268,
    "iqr": [
@@ -548,7 +604,7 @@
   }
  },
  "environment": {
-  "data": "2026-10-07T13:19:29",
+  "data": "2026-10-07T19:08:07",
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26200-SP0",
   "numpy": "2.4.2",
