@@ -22,7 +22,7 @@ from reliability import a4_config as C  # noqa: E402
 # key names of the cache meta (the published caches keep the names of the original run)
 KEYS = {
     "converged": ("converged", "convergiu"),
-    "ratio": ("effective_ratio_at_adaptation_it50", "razao_efetiva_na_adaptacao_it50"),
+    "ratio": ("effective_ratio_in_adaptation_it50", "razao_efetiva_na_adaptacao_it50"),
     "n_probes": ("n_probes", "n_sondas"),
     "lambda": ("lambda_ewc",),
     "entries": ("lambdas_ewc",),

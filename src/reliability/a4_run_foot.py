@@ -172,6 +172,10 @@ def process_foot(
     border_sr = S.open_border(mesh_sr)  # evidence of the open border
     F = X.features(mesh_sr, grid, k, s_interp)  # Eq. 7–14
     q = S.reference_correspondence(V, mesh_ref)  # §2.11 exact matches
+    if C.ERROR_DEFINITION == "exact":
+        # the target of the super-resolved mesh is the distance to its exact nearest point q, for every vertex and
+        # without the EXACT_MAX_MM bound (the published caches hold this value; the bound stays for the trilinear mesh)
+        e = np.linalg.norm(V - q, axis=1)
     times["sr"] = time.time() - t0
     out = {
         "ident": ident,

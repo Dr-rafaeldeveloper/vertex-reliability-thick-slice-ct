@@ -2395,7 +2395,7 @@
   }
  },
  "environment": {
-  "data": "2026-10-07T20:39:33",
+  "data": "2026-10-07T20:58:59",
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26200-SP0",
   "numpy": "2.4.2",
@@ -2404,7 +2404,7 @@
   "skimage": "0.26.0",
   "trimesh": "4.12.2",
   "SimpleITK": "2.5.3",
-  "code_hash_reliability": "593f4f1769ede06c",
+  "code_hash_reliability": "e1143f8588752586",
   "sr_lr": 0.0005850631055477961,
   "sr_iters": 3046,
   "ds_prior_lr": 0.001,

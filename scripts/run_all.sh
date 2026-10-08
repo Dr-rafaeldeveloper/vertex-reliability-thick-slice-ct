@@ -22,7 +22,7 @@ python $P/supplement/error_tails.py                            > "$L/error_tails
 python $P/supplement/median_constant_baseline.py               > "$L/median_baseline.log" 2>&1
 python $P/supplement/calibration_and_descriptor_checks.py      > "$L/calibration_checks.log" 2>&1
 python $P/supplement/ewc_calibration_check.py                  > "$L/ewc_calibration.log" 2>&1
-# The published exact-error caches were rebuilt from the sampled run (supplement/rebuild_caches_exact.py): for the
-# super-resolved foot meshes they hold the distance to the stored nearest point without the EXACT_MAX_MM bound,
-# whereas a fresh run bounds every mesh (302 vertices in 8 feet; no per-foot mean error changes by more than 0.001 mm).
+# The exact-error caches of the paper were rebuilt from the sampled run (supplement/rebuild_caches_exact.py); a fresh run
+# of a4_run_foot.py produces the same target (distance to the stored nearest point for the super-resolved mesh, bounded
+# search for the trilinear mesh and for the thorax).
 python scripts/compare_with_reference.py

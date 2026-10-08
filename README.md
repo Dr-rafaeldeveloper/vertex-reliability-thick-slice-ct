@@ -111,8 +111,12 @@ The script runs, in order:
 | Thoracic cohort | `a4_run_thorax.py --partition test` | the same without uncertainty, for the 100 test cases |
 | Results | `a4_analyses.py` | one JSON per Results subsection, including the nested random-forest selection |
 | Sensitivity | `a4c_sensitivity.py --process`, then `--analyze` | sensitivity to modelling choices |
-| Error measurement check | `supplement/exact_error.py` | sampling floor of Eq. 5, exact point-to-triangle error, error tails, vertices outside the volume |
-| Comparison | `scripts/compare_with_reference.py` | every numeric value against `reference_results/` |
+| Error measurement check | `supplement/exact_error.py` | sampling floor of Eq. 5 and exact error (only with `ERROR_DEFINITION = "sampled"`; a no-op otherwise) |
+| Error tails | `supplement/error_tails.py` | mean, 90th percentile and fraction above 2 mm per case (Section 3.1) |
+| Median-constant baseline | `supplement/median_constant_baseline.py` | MAE against a constant equal to the median training error (Section 3.3) |
+| Calibration and descriptor checks | `supplement/calibration_and_descriptor_checks.py` | slope with/without the vertices at the bound, between-case compression, descriptor-error association, field vs shape disagreement |
+| EWC calibration | `supplement/ewc_calibration_check.py` | outcome of the EWC coefficient calibration of every subnetwork |
+| Comparison | `scripts/compare_with_reference.py` | every numeric value against the folder matching `ERROR_DEFINITION` (`reference_results/` or `reference_results_exact/`) |
 
 Each step skips the cases already processed, so the run can be interrupted and resumed. Outputs go to
 `output/validation/reliability/` (set `A4_OUTPUT_DIR` to change the location). Run one step at a time: the foot pass
@@ -183,7 +187,7 @@ selection. Results are in `reference_results_exact/` (same file names as `refere
 `rS_median_baseline.json`, `rS_original_sr_config.json`, `rS_error_tails.json`, `rS_calibration_checks.json` and `rS_ewc_calibration.json`, produced by the scripts in `src/reliability/supplement/`). The sampled definition
 (`ERROR_DEFINITION = "sampled"`) reproduces `reference_results/`.
 
-The published exact-error caches were rebuilt from the caches of the reference run: for the super-resolved foot meshes the error is the distance to the nearest reference point stored at reconstruction, without the `EXACT_MAX_MM` bound, whereas a fresh run of the pipeline applies the bound to every mesh. The difference concerns 302 vertices in 8 feet (none changes a per-foot mean error by more than 0.001 mm; see `rS_calibration_checks.json`). `scripts/compare_with_reference.py` compares with the folder that matches `ERROR_DEFINITION`. The package hash recorded in `reference_results_exact/` (`c089bc0a79214227`) is that of tag v1.1.0; later commits changed only comments and made the hash independent of line endings.
+The published exact-error caches were rebuilt from the caches of the reference run: for the super-resolved foot meshes the error is the distance to the nearest reference point computed at reconstruction, without the `EXACT_MAX_MM` bound, and `a4_run_foot.py` produces the same target in a fresh run; the trilinear meshes and the thorax use the bounded search. Bounding the super-resolved foot meshes as well would concern 302 vertices in 8 feet and change no per-foot mean error by more than 0.001 mm (`rS_calibration_checks.json`). `scripts/compare_with_reference.py` compares with the folder that matches `ERROR_DEFINITION`. The package hash recorded in the result files of `reference_results_exact/` (`c089bc0a79214227`) is that of tag v1.1.0, with which the analyses were run; the check files `rS_*.json` added afterwards record the hash of tag v1.1.1, whose changes relative to v1.1.0 are comments, the line-ending-independent hash and the foot target described above.
 
 Medians across cases with the interquartile range, from `reference_results_exact/`:
 
