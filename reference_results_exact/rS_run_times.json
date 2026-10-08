@@ -1,0 +1,134 @@
+{
+ "description": "seconds per case recorded in the cache meta (stages of a4_run_foot / a4_run_thorax) and per analysis in the result files",
+ "device": "2.12.1+cu126",
+ "foot": {
+  "reference": {
+   "n": 48,
+   "median": 3.1,
+   "iqr": [
+    2.5,
+    4.2
+   ],
+   "min": 1.7,
+   "max": 12.3
+  },
+  "trilinear": {
+   "n": 48,
+   "median": 10.95,
+   "iqr": [
+    9.975,
+    12.675
+   ],
+   "min": 8.3,
+   "max": 27.0
+  },
+  "sr": {
+   "n": 48,
+   "median": 97.6,
+   "iqr": [
+    91.775,
+    106.925
+   ],
+   "min": 88.6,
+   "max": 776.8
+  },
+  "ensemble": {
+   "n": 48,
+   "median": 519.0,
+   "iqr": [
+    501.47499999999997,
+    577.9250000000001
+   ],
+   "min": 473.3,
+   "max": 1852.2
+  },
+  "dropsembles": {
+   "n": 48,
+   "median": 650.7,
+   "iqr": [
+    633.425,
+    729.3
+   ],
+   "min": 589.7,
+   "max": 2305.1
+  },
+  "sr_training_only": {
+   "n": 48,
+   "median": 65.4,
+   "iqr": [
+    65.4,
+    65.5
+   ],
+   "min": 65.0,
+   "max": 66.2
+  }
+ },
+ "thorax_test": {
+  "reference": {
+   "n": 100,
+   "median": 18.299999999999997,
+   "iqr": [
+    16.6,
+    22.025
+   ],
+   "min": 14.0,
+   "max": 32.4
+  },
+  "trilinear": {
+   "n": 100,
+   "median": 40.849999999999994,
+   "iqr": [
+    38.25,
+    47.275
+   ],
+   "min": 33.4,
+   "max": 66.8
+  },
+  "sr": {
+   "n": 100,
+   "median": 137.39999999999998,
+   "iqr": [
+    132.775,
+    146.675
+   ],
+   "min": 123.8,
+   "max": 174.6
+  },
+  "sr_training_only": {
+   "n": 100,
+   "median": 65.0,
+   "iqr": [
+    65.0,
+    65.1
+   ],
+   "min": 64.8,
+   "max": 67.4
+  }
+ },
+ "analyses_seconds": {
+  "r37_registration.json": 183.5
+ },
+ "environment": {
+  "data": "2026-10-08T07:02:51",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.0",
+  "skimage": "0.26.0",
+  "trimesh": "4.12.2",
+  "SimpleITK": "2.5.3",
+  "code_hash_reliability": "e1143f8588752586",
+  "sr_lr": 0.0005850631055477961,
+  "sr_iters": 3046,
+  "ds_prior_lr": 0.001,
+  "sr_origin": {
+   "file": "results/sr_selection_hebo.json",
+   "sha256": "dfb3fb21028fa6055324ab0cdf679011bf9b0513d4d86d6a3ffd2f415c65c505",
+   "adopted_index": 18,
+   "adopted_equals_a4_config": true
+  },
+  "fast_simplification": "0.1.13",
+  "optuna": "5.0.0"
+ }
+}

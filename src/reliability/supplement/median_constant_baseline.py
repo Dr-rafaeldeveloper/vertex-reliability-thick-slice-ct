@@ -51,6 +51,7 @@ def main():
         "mae_constant_median": E.summary(list(mae_median.values())),
         "model_minus_constant_mean": E.paired_comparison(mae_model, mae_mean),
         "model_minus_constant_median": E.paired_comparison(mae_model, mae_median),
+        "per_case": {h: {"mae_model": mae_model[h], "mae_constant_mean": mae_mean[h], "mae_constant_median": mae_median[h]} for h in ids},
         "lofo_memo": os.path.basename(memo),
         "environment": C.environment_record(with_torch=False),
     }

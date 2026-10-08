@@ -22,6 +22,10 @@ python $P/supplement/error_tails.py                            > "$L/error_tails
 python $P/supplement/median_constant_baseline.py               > "$L/median_baseline.log" 2>&1
 python $P/supplement/calibration_and_descriptor_checks.py      > "$L/calibration_checks.log" 2>&1
 python $P/supplement/ewc_calibration_check.py                  > "$L/ewc_calibration.log" 2>&1
+python $P/supplement/confidence_intervals.py                   > "$L/confidence_intervals.log" 2>&1   # Hodges-Lehmann and bootstrap CIs
+python $P/supplement/region_count_sensitivity.py               > "$L/region_count.log" 2>&1
+python $P/supplement/intensity_uncertainty_mechanism.py        > "$L/intensity_mechanism.log" 2>&1
+python $P/supplement/run_times.py                              > "$L/run_times.log" 2>&1
 # The exact-error caches of the paper were rebuilt from the sampled run (supplement/rebuild_caches_exact.py); a fresh run
 # of a4_run_foot.py produces the same target (distance to the stored nearest point for the super-resolved mesh, bounded
 # search for the trilinear mesh and for the thorax).

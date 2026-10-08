@@ -116,6 +116,10 @@ The script runs, in order:
 | Median-constant baseline | `supplement/median_constant_baseline.py` | MAE against a constant equal to the median training error (Section 3.3) |
 | Calibration and descriptor checks | `supplement/calibration_and_descriptor_checks.py` | slope with/without the vertices at the bound, between-case compression, descriptor-error association, field vs shape disagreement |
 | EWC calibration | `supplement/ewc_calibration_check.py` | outcome of the EWC coefficient calibration of every subnetwork |
+| Confidence intervals | `supplement/confidence_intervals.py` | Hodges-Lehmann estimates with 95 % intervals for the paired comparisons; bootstrap intervals of the headline medians |
+| Number of regions | `supplement/region_count_sensitivity.py` | region-level association with 10, 25 and 50 k-means regions |
+| Intensity-uncertainty mechanism | `supplement/intensity_uncertainty_mechanism.py` | ensemble uncertainty against local HU and gradient of the thick-slice volume; partial correlations |
+| Run times | `supplement/run_times.py` | seconds per stage recorded in the caches |
 | Comparison | `scripts/compare_with_reference.py` | every numeric value against the folder matching `ERROR_DEFINITION` (`reference_results/` or `reference_results_exact/`) |
 
 Each step skips the cases already processed, so the run can be interrupted and resumed. Outputs go to
@@ -184,7 +188,7 @@ vertices farther than `EXACT_MAX_MM` from the nearest sampled point keep that bo
 rebuilt from the caches of the reference run by `supplement/rebuild_caches_exact.py` (same surfaces, super-resolution
 and uncertainties; only the error target changed), and every analysis was repeated, including the nested forest
 selection. Results are in `reference_results_exact/` (same file names as `reference_results/`, plus
-`rS_median_baseline.json`, `rS_original_sr_config.json`, `rS_error_tails.json`, `rS_calibration_checks.json` and `rS_ewc_calibration.json`, produced by the scripts in `src/reliability/supplement/`). The sampled definition
+`rS_median_baseline.json`, `rS_original_sr_config.json`, `rS_error_tails.json`, `rS_calibration_checks.json`, `rS_ewc_calibration.json`, `rS_confidence_intervals.json`, `rS_region_count.json`, `rS_intensity_mechanism.json` and `rS_run_times.json`, produced by the scripts in `src/reliability/supplement/`). The sampled definition
 (`ERROR_DEFINITION = "sampled"`) reproduces `reference_results/`.
 
 The published exact-error caches were rebuilt from the caches of the reference run: for the super-resolved foot meshes the error is the distance to the nearest reference point computed at reconstruction, without the `EXACT_MAX_MM` bound, and `a4_run_foot.py` produces the same target in a fresh run; the trilinear meshes and the thorax use the bounded search. Bounding the super-resolved foot meshes as well would concern 302 vertices in 8 feet and change no per-foot mean error by more than 0.001 mm (`rS_calibration_checks.json`). `scripts/compare_with_reference.py` compares with the folder that matches `ERROR_DEFINITION`. The package hash recorded in the result files of `reference_results_exact/` (`c089bc0a79214227`) is that of tag v1.1.0, with which the analyses were run; the check files `rS_*.json` added afterwards record the hash of tag v1.1.1, whose changes relative to v1.1.0 are comments, the line-ending-independent hash and the foot target described above.
