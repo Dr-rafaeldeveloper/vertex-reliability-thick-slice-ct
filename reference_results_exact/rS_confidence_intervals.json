@@ -105,7 +105,9 @@
     0.783919420609581
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_intensity (m = 4)"
   },
   "foot_rho_region_field_minus_u_ens": {
    "n": 48,
@@ -120,7 +122,9 @@
     1.1242307692307691
    ],
    "positives": 48,
-   "p_wilcoxon": 1.6306098573244595e-09
+   "p_wilcoxon": 1.6306098573244595e-09,
+   "p_bh": 1.6306098573244595e-09,
+   "bh_family": "region_intensity (m = 4)"
   },
   "foot_rho_vertex_field_minus_u_mc": {
    "n": 48,
@@ -135,7 +139,9 @@
     0.7900063988723955
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_intensity (m = 4)"
   },
   "foot_rho_region_field_minus_u_mc": {
    "n": 48,
@@ -150,7 +156,9 @@
     1.1346153846153846
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 2.842170943040401e-14,
+   "bh_family": "region_intensity (m = 4)"
   },
   "foot_rho_vertex_field_minus_u_dropens": {
    "n": 48,
@@ -165,7 +173,9 @@
     0.8031121976692804
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_intensity (m = 4)"
   },
   "foot_rho_region_field_minus_u_dropens": {
    "n": 48,
@@ -180,7 +190,9 @@
     1.1303846153846153
    ],
    "positives": 48,
-   "p_wilcoxon": 1.6306098573244595e-09
+   "p_wilcoxon": 1.6306098573244595e-09,
+   "p_bh": 1.6306098573244595e-09,
+   "bh_family": "region_intensity (m = 4)"
   },
   "foot_rho_vertex_field_minus_u_ds": {
    "n": 48,
@@ -195,7 +207,9 @@
     0.7352805479604838
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_intensity (m = 4)"
   },
   "foot_rho_region_field_minus_u_ds": {
    "n": 48,
@@ -210,7 +224,9 @@
     1.089230769230769
    ],
    "positives": 48,
-   "p_wilcoxon": 1.6306098573244595e-09
+   "p_wilcoxon": 1.6306098573244595e-09,
+   "p_bh": 1.6306098573244595e-09,
+   "bh_family": "region_intensity (m = 4)"
   },
   "foot_rho_vertex_field_minus_u_geo_std": {
    "n": 48,
@@ -225,7 +241,9 @@
     0.2051613093895505
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_surface (m = 3)"
   },
   "foot_rho_region_field_minus_u_geo_std": {
    "n": 48,
@@ -240,7 +258,9 @@
     0.032307692307692315
    ],
    "positives": 20,
-   "p_wilcoxon": 0.2954804826383195
+   "p_wilcoxon": 0.2954804826383195,
+   "p_bh": 0.44322072395747925,
+   "bh_family": "region_surface (m = 3)"
   },
   "foot_rho_vertex_field_minus_u_geo_abs": {
    "n": 48,
@@ -255,7 +275,9 @@
     0.2054621132938802
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_surface (m = 3)"
   },
   "foot_rho_region_field_minus_u_geo_abs": {
    "n": 48,
@@ -270,7 +292,9 @@
     -0.03230769230769226
    ],
    "positives": 15,
-   "p_wilcoxon": 0.0038235377652208326
+   "p_wilcoxon": 0.0038235377652208326,
+   "p_bh": 0.011470613295662497,
+   "bh_family": "region_surface (m = 3)"
   },
   "foot_rho_vertex_field_minus_u_geo_mc": {
    "n": 48,
@@ -285,7 +309,9 @@
     0.2616173896183705
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 7.105427357601002e-15,
+   "bh_family": "vertex_surface (m = 3)"
   },
   "foot_rho_region_field_minus_u_geo_mc": {
    "n": 48,
@@ -300,7 +326,9 @@
     0.10076923076923075
    ],
    "positives": 23,
-   "p_wilcoxon": 0.5115463123331483
+   "p_wilcoxon": 0.5115463123331483,
+   "p_bh": 0.5115463123331483,
+   "bh_family": "region_surface (m = 3)"
   },
   "registration_field_minus_random_mm": {
    "n": 48,
@@ -315,7 +343,9 @@
     -0.11222625342084946
    ],
    "positives": 10,
-   "p_wilcoxon": 8.153284272083283e-05
+   "p_wilcoxon": 8.153284272083283e-05,
+   "p_bh": 0.00016306568544166566,
+   "bh_family": "registration (m = 4)"
   },
   "registration_field_minus_d_shape_mm": {
    "n": 48,
@@ -330,7 +360,9 @@
     -0.0027591872724991584
    ],
    "positives": 16,
-   "p_wilcoxon": 0.00768480026177798
+   "p_wilcoxon": 0.00768480026177798,
+   "p_bh": 0.010246400349037307,
+   "bh_family": "registration (m = 4)"
   },
   "registration_field_minus_oracle_mm": {
    "n": 48,
@@ -345,7 +377,9 @@
     0.10300220772308652
    ],
    "positives": 28,
-   "p_wilcoxon": 0.02152189942217575
+   "p_wilcoxon": 0.02152189942217575,
+   "p_bh": 0.02152189942217575,
+   "bh_family": "registration (m = 4)"
   },
   "registration_field_minus_global_mm": {
    "n": 48,
@@ -360,8 +394,21 @@
     0.36958021738447155
    ],
    "positives": 48,
-   "p_wilcoxon": 7.105427357601002e-15
+   "p_wilcoxon": 7.105427357601002e-15,
+   "p_bh": 2.842170943040401e-14,
+   "bh_family": "registration (m = 4)"
   }
+ },
+ "registration_field_over_oracle_ratio": {
+  "n": 48,
+  "median": 1.0233543508010639,
+  "iqr": [
+   0.967576284059834,
+   1.5829755883104362
+  ],
+  "feet_within_5_percent": 28,
+  "feet_more_than_50_percent_worse": 13,
+  "max": 11.249158457573293
  },
  "medians": {
   "foot_rho_vertex_field": {
@@ -470,7 +517,7 @@
   }
  },
  "environment": {
-  "data": "2026-10-08T07:02:19",
+  "data": "2026-10-08T07:30:49",
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26200-SP0",
   "numpy": "2.4.2",

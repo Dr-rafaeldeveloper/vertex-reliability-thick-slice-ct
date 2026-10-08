@@ -76,6 +76,25 @@ def main():
             comp["foot_rho_region_field_minus_%s" % name] = paired(field_r, {h: v["rho_region"] for h, v in pcu.items()}, rng)
     for s in ("random", "d_shape", "oracle", "global"):
         comp["registration_field_minus_%s_mm" % s] = paired({h: v["field"]["median_mm"] for h, v in pc37.items()}, {h: v[s]["median_mm"] for h, v in pc37.items()}, rng)
+    # Benjamini-Hochberg within the families of the paper (Section 2.12): intensity-space (m = 4), surface-space
+    # (m = 3), registration (m = 4), at vertex and region level separately
+    from reliability import a4_statistics as E
+    fam = {
+        "vertex_intensity": ["foot_rho_vertex_field_minus_%s" % n for n in ("u_ens", "u_mc", "u_dropens", "u_ds")],
+        "region_intensity": ["foot_rho_region_field_minus_%s" % n for n in ("u_ens", "u_mc", "u_dropens", "u_ds")],
+        "vertex_surface": ["foot_rho_vertex_field_minus_%s" % n for n in ("u_geo_std", "u_geo_abs", "u_geo_mc")],
+        "region_surface": ["foot_rho_region_field_minus_%s" % n for n in ("u_geo_std", "u_geo_abs", "u_geo_mc")],
+        "registration": ["registration_field_minus_%s_mm" % s for s in ("random", "d_shape", "oracle", "global")],
+    }
+    for name, keys in fam.items():
+        keys = [k for k in keys if k in comp]
+        bh = E.benjamini_hochberg({k: comp[k]["p_wilcoxon"] for k in keys})
+        for k in keys:
+            comp[k]["p_bh"] = bh[k]
+            comp[k]["bh_family"] = "%s (m = %d)" % (name, len(keys))
+    ratio = np.array([v["field"]["median_mm"] / v["oracle"]["median_mm"] for v in pc37.values()])
+    oracle_ratio = {"n": len(ratio), "median": float(np.median(ratio)), "iqr": [float(np.percentile(ratio, 25)), float(np.percentile(ratio, 75))],
+                    "feet_within_5_percent": int((ratio <= 1.05).sum()), "feet_more_than_50_percent_worse": int((ratio > 1.5).sum()), "max": float(ratio.max())}
     medians = {
         "foot_rho_vertex_field": list(field_v.values()), "foot_rho_region_field": list(field_r.values()),
         "foot_auroc_decile": [v["auroc_decile"] for v in pc33.values()], "foot_slope": [v["slope"] for v in pc33.values()],
@@ -89,6 +108,7 @@ def main():
         "description": "paired differences: median, percentile-bootstrap 95 %% CI of the median (%d resamples, seed %d), Hodges-Lehmann estimate with distribution-free 95 %% CI, positives, two-sided Wilcoxon; headline medians with bootstrap 95 %% CI" % (N_BOOT, SEED),
         "wilcoxon_floor_n48": 2.0 / 2**48,
         "paired": comp,
+        "registration_field_over_oracle_ratio": oracle_ratio,
         "medians": {k: {"n": len(v), "median": float(np.median(v)), "bootstrap_ci": boot_median(v, rng)} for k, v in medians.items()},
         "environment": C.environment_record(with_torch=False),
     }

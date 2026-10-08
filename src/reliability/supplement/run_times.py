@@ -51,7 +51,7 @@ def cohort(folder):
 def main():
     out = {
         "description": "seconds per case recorded in the cache meta (stages of a4_run_foot / a4_run_thorax) and per analysis in the result files",
-        "device": C.environment_record().get("torch", {}),
+        "device": C.environment_record().get("gpu", "unknown"),
         "foot": cohort(C.A4_CACHE_FOOT),
         "thorax_test": cohort(C.A4_CACHE_THORAX),
         "analyses_seconds": {},

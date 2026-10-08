@@ -46,6 +46,16 @@ L.FIGS_OUT = OUTPUT
 LW, BLACK, GRAY, BLUE, RED = L.LW, L.BLACK, L.GRAY, L.BLUE, L.RED
 
 
+def hbar(fig, ax, sc, label, height=0.05, sep=0.035):
+    """Horizontal colour bar under the panel (for panels whose scale differs from the shared one)."""
+    cax = ax.inset_axes([0.12, -sep - height, 0.76, height])
+    cb = fig.colorbar(sc, cax=cax, orientation="horizontal")
+    cb.set_label(label, fontsize=6, labelpad=1.5)
+    cb.ax.tick_params(labelsize=5.5, width=LW, length=1.8, pad=1)
+    cb.outline.set_linewidth(LW)
+    return cb
+
+
 def bar(fig, ax, sc, label, width=0.035, sep=0.02):
     """Color bar attached to the panel (same height as the axis box, after the layout)."""
     cax = ax.inset_axes([1.0 + sep, 0.0, width, 1.0])
@@ -205,7 +215,7 @@ def fig_pipeline():
     L.title(B[0], "f", "$\\mathcal{S}_{\\mathrm{interp}}$ and SR vertices", fs=7)
     L.mesh(B[1], u, v, p, np.clip(d["d_shape"], 0, 2), 0, 2, foot=foot)
     L.title(B[1], "g", "$d_{\\mathrm{shape}}(v)$", fs=7)
-    L.mesh(B[2], u, v, p, d["nz_abs"], 0, 1, foot=foot)
+    sc_h = L.mesh(B[2], u, v, p, d["nz_abs"], 0, 1, foot=foot)
     L.title(B[2], "h", "$|n_z|(v)$", fs=7)
     L.mesh(B[3], u, v, p, e_hat, 0, 2, foot=foot)
     L.title(B[3], "i", "Predicted $\\hat{e}(v)$", fs=7)
@@ -220,11 +230,11 @@ def fig_pipeline():
         Cx[1], u, v, p, gray, 0, 1, cmap="Greys", foot=foot, masks=[(high, RED)]
     )
     L.title(Cx[1], "l", "Top decile of $\\hat{e}(v)$", fs=7)
-    L.mesh(
+    sc_m = L.mesh(
         Cx[2], u, v, p, t["u_ens_HU"], 0, float(np.percentile(t["u_ens_HU"], 99)), foot=foot
     )
     L.title(Cx[2], "m", "$u_{\\mathrm{ens}}(v)$", fs=7)
-    L.mesh(
+    sc_n = L.mesh(
         Cx[3],
         u,
         v,
@@ -254,7 +264,10 @@ def fig_pipeline():
 
     for ax in (*A, *B, *Cx):
         ax.set_anchor("C")
-    bar(fig, B[4], sc, "mm, (g), (i), (j)", width=0.045, sep=0.03)
+    bar(fig, B[4], sc, "mm (g, i, j)", width=0.045, sep=0.03)
+    hbar(fig, B[2], sc_h, "$|n_z|$ (dimensionless)")
+    hbar(fig, Cx[2], sc_m, "$u_{\mathrm{ens}}$ (HU)")
+    hbar(fig, Cx[3], sc_n, "$u_{\mathrm{geo,std}}$ (mm)")
     fig.canvas.draw()
 
     fig_arrow(fig, A[0], A[1], "slice\naveraging")
@@ -319,6 +332,27 @@ def fig_pipeline():
         (center(B[2]) + center(A[4])) / 2,
         y2 + 0.004,
         "vertex-wise descriptors",
+        fontsize=6,
+        ha="center",
+        va="bottom",
+    )
+
+    # (i) -> band 3: the predicted field is what is evaluated and used
+    base_B = min(b.get_position().y0 for b in B) - 0.008
+    y3 = base_B - 0.075  # below the horizontal colour bar of panel (h)
+    elbow_fig(
+        fig,
+        [
+            (center(B[3]), base_B),
+            (center(B[3]), y3),
+            (center(Cx[1]), y3),
+            (center(Cx[1]), top(Cx[1])),
+        ],
+    )
+    fig.text(
+        (center(B[3]) + center(Cx[1])) / 2,
+        y3 + 0.004,
+        "evaluation and use of $\hat{e}(v)$",
         fontsize=6,
         ha="center",
         va="bottom",

@@ -1,6 +1,6 @@
 {
  "description": "seconds per case recorded in the cache meta (stages of a4_run_foot / a4_run_thorax) and per analysis in the result files",
- "device": "2.12.1+cu126",
+ "device": "NVIDIA GeForce GTX 1660 Ti",
  "foot": {
   "reference": {
    "n": 48,
@@ -109,7 +109,7 @@
   "r37_registration.json": 183.5
  },
  "environment": {
-  "data": "2026-10-08T07:02:51",
+  "data": "2026-10-08T07:33:45",
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26200-SP0",
   "numpy": "2.4.2",
